@@ -6,7 +6,9 @@ public class player : MonoBehaviour
     [SerializeField]
     private float speed = 5f;
     [SerializeField]
-    private GameObject bullet; 
+    private GameObject bullet;
+    [SerializeField]
+    private int barrier = 3; 
     private float h, v; 
     private void Update()
     {

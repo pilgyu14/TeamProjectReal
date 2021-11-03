@@ -2,7 +2,7 @@
 using UnityEngine;
 
 
-    public class move2 : MonoBehaviour
+    public class EnemyBulletCircle : MonoBehaviour
     {
     private void Start()
     {

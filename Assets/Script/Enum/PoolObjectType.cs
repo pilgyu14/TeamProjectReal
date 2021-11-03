@@ -2,6 +2,6 @@
 {
     bullet_Type0,
     bullet_Type1,
-
+    laser,
     playerBullet
 }

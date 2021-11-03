@@ -10,10 +10,13 @@ public class EnemyHPBar : MonoBehaviour
     private Transform enemy;
     [SerializeField]
     private Slider HPSlider;
-
+    [SerializeField]
+    private Slider BackHPSlider;
+    private bool backHphit = false; 
 
     public float currentHP; 
     private float MaxHP = 1000f; 
+   
     void Start()
     {
                
@@ -24,6 +27,24 @@ public class EnemyHPBar : MonoBehaviour
     {
         Debug.Log(currentHP);
         //transform.position = enemy.position;
-        HPSlider.value = currentHP / MaxHP; 
+        HPSlider.value =Mathf.Lerp(HPSlider.value ,currentHP / MaxHP,5f*Time.deltaTime);
+        if (backHphit)
+        {
+            BackHPSlider.value = Mathf.Lerp(BackHPSlider.value,HPSlider.value, 10f * Time.deltaTime);
+            if (HPSlider.value >= BackHPSlider.value - 0.01f)
+            {
+                BackHPSlider.value = HPSlider.value;
+                backHphit = false;
+            }
+        }   
+    }
+    public void Damaged()
+    {
+        currentHP -= 30f;
+        Invoke("BackDamaged", 0.5f);
+    }
+    void BackDamaged()
+    {
+        backHphit = true; 
     }
 }

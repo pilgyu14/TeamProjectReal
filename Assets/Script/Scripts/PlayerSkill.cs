@@ -12,7 +12,7 @@ public class PlayerSkill : MonoBehaviour
     //½ºÅ³ ÄðÅ¸ÀÓ
     [SerializeField]
     private Image coolTime;
-    private float timeCount = 100f;
+    private float timeCount = 0f;
     private float maxTime = 100f; 
     private float minusCount = 3f;
     private bool IsCoolTime = false; 
@@ -29,9 +29,10 @@ public class PlayerSkill : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
-            
+            if (IsCoolTime == true) return; 
             Explossion();
-            IsCoolTime = true; 
+            IsCoolTime = true;
+            timeCount = 100f; 
         }
         DoCoolTime();
         timeCount -= minusCount * Time.deltaTime;
@@ -46,6 +47,8 @@ public class PlayerSkill : MonoBehaviour
 
     void DoCoolTime()
     {
+        if (coolTime.fillAmount == 0)
+            IsCoolTime = false; 
         coolTime.fillAmount = timeCount / 100f; 
     }
     private void OnTriggerEnter2D(Collider2D collision)

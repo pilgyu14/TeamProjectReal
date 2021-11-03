@@ -10,8 +10,9 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private Transform trans;
     public Transform playerTrans;
-    public Image hpBar; 
+   // public Image hpBar; 
 
+    [SerializeField]
     private int speed = 3;
     private bool isDamaged = false; 
 
@@ -19,7 +20,7 @@ public class Enemy : MonoBehaviour
 
     //체력 관리 
     [SerializeField]
-    private GameObject enemyCanvas;
+    private GameObject enemyCanvasGo;
 
 
     //풀링
@@ -31,15 +32,20 @@ public class Enemy : MonoBehaviour
     float[] speeds = new float[34]; // 모양 만들기 위해 총알 마다 다른 속도 
     float[] dir = new float[34]; //
     float rot = 0f;  // 하트 모양 각도
-    private void Awake()
+
+    //레이저
+    [SerializeField]
+    private GameObject laser = null;
+    [SerializeField]
+    private int laserCount = 10; 
+    private int laserRot = 0; 
+        private void Awake()
     {
         HeartDataInit();
     }
     void Start()
     {
-        hpBar = GetComponent<Image>();
-       // ReturnEnemyBullet();
-      
+
     }
 
     void Update()
@@ -56,10 +62,44 @@ public class Enemy : MonoBehaviour
             StartCoroutine(flowerShot());
     }
 
-
-    void CheckHP()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        hpBar.fillAmount -= 1 / 100; 
+        Debug.Log("보스 ");
+        if (isDamaged) return;
+        if (collision.gameObject.CompareTag("playerBullet"))
+        {
+            ObjectPool.Instance.ReturnObject(PoolObjectType.playerBullet, collision.gameObject);
+            enemyCanvasGo.GetComponent<EnemyHPBar>().Damaged();
+        }
+    }
+
+    public void TargetLaser()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            for (int j = 0; j < laserCount; j++)
+            {
+                Vector2 dir = playerTrans.position - transform.position;
+
+                Ray ray = new Ray(transform.position, dir);
+
+                float MaxDistance = 20f;
+
+                GameObject laser;
+
+                laser = ObjectPool.Instance.GetObject(PoolObjectType.laser);
+                laser.transform.rotation = Quaternion.Euler(0, 0, laserRot);
+                laser.transform.position += Vector3.down*j*0.2f;
+                Debug.DrawRay(transform.position, dir, Color.red, MaxDistance);
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, MaxDistance);
+                if (hit)
+                {
+                    enemyCanvasGo.GetComponent<EnemyHPBar>().Damaged();
+                }
+                
+            }
+            laserRot += 72;
+        }
     }
     IEnumerator aroundShot() //둥글게 발사 
     {
@@ -216,7 +256,7 @@ public class Enemy : MonoBehaviour
 
 
 
-    IEnumerator  HeartShot()
+    IEnumerator  HeartShot() //하트 모양 발사 
     {
 
         for (int j = 0; j < 5; j++)
@@ -329,16 +369,7 @@ public class Enemy : MonoBehaviour
         dir[33] = 270.05f;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log("보스 ");
-        if (isDamaged) return;
-        if (collision.tag== "playerBullet")
-        {
-            ObjectPool.Instance.ReturnObject(PoolObjectType.playerBullet, collision.gameObject);
-            //enemyCanvas.GetComponent<EnemyHPBar>().currentHP -= 300f;
-        }
-    }
+   }
     //IEnumerator Allattack()
     //{
     //    float angle = 360 / shotCount;
@@ -358,5 +389,5 @@ public class Enemy : MonoBehaviour
 
     //    }
 
-}
+
 
