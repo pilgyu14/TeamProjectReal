@@ -11,6 +11,9 @@ TagManager:
   - bullet_Type2
   - bullet_Type3
   - playerBullet
+  - skill1
+  - skill2
+  - skill3
   layers:
   - Default
   - TransparentFX

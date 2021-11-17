@@ -31,7 +31,7 @@ public class PlayerSkill : MonoBehaviour
         {
             if (IsCoolTime == true) return; 
             Explossion();
-            IsCoolTime = true;
+            ;
             timeCount = 100f; 
         }
         DoCoolTime();
@@ -39,6 +39,7 @@ public class PlayerSkill : MonoBehaviour
     }
     void Explossion()
     {
+        IsCoolTime = true;
         col.enabled = true;
         transform.DOScale(new Vector3(70, 1, 1), 1f).OnComplete(() => col.enabled = false);
         transform.localScale = new Vector3(1, 1, 1);

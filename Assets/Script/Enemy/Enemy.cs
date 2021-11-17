@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour
     private int laserRot = 0; 
         private void Awake()
     {
-        HeartDataInit();
+        HeartDataInit();//하트 각도,스피드 설정
     }
     void Start()
     {
