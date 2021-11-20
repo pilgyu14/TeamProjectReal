@@ -46,16 +46,33 @@ public class SkillChan : MonoBehaviour
     public void OnSetImage()// 동료를 통해 얻은 스킬을 클릭시 빈 공간에 넣기 
     {
         GameObject clickObject = EventSystem.current.currentSelectedGameObject;
-        if (skillImage[0].sprite == null)
-            SetColor(skillImage[0], 1);
-            skillImage[0].sprite = clickObject.GetComponent<Image>().sprite; 
+        for(int i =0; i<skillImage.Count; i++)
+        {
+            if (skillImage[i].sprite == null)
+            {
+                SetColor(skillImage[i], 1);
+                skillImage[i].sprite = clickObject.GetComponent<Image>().sprite;
+                return;
+            }
 
+        }
+        //if (skillImage[0].sprite == null)
+        //{
+        //    SetColor(skillImage[0], 1);
+        //    skillImage[0].sprite = clickObject.GetComponent<Image>().sprite;
+        //}
 
-        else if (skillImage[1].sprite == null)
-            skillImage[1].sprite = clickObject.GetComponent<Image>().sprite;
+        //else if (skillImage[1].sprite == null)
+        //{
+        //    SetColor(skillImage[0], 1);
+        //    skillImage[1].sprite = clickObject.GetComponent<Image>().sprite;
+        //} 
 
-        else if (skillImage[2].sprite == null)
-            skillImage[2].sprite = clickObject.GetComponent<Image>().sprite;
+        //else if (skillImage[2].sprite == null)
+        //{
+        //    SetColor(skillImage[0], 1);
+        //    skillImage[2].sprite = clickObject.GetComponent<Image>().sprite;
+        //}
         clickObject.SetActive(false);
         //else
         //OnChangeImage() 이 함수 실행
