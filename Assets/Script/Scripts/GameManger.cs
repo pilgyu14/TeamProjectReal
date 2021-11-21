@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class GameManager : MonoSingleton<GameManager>
 {
-
-    //{
-    //    private PoolManager poolManager = null; 
-    //    public PoolManager pool { get{ return poolManager; } } 
-    //    private void Awake()
-    //    {
-    //        poolManager = 
-    //    } 
-
-    //게임 매니저에 넣기
-
-    public GameObject InstantiateObj(GameObject gameObject)
+    private Vector2 curMinPos = new Vector2(-8.8f, -4.9f);
+    private Vector2 curMaxPos = new Vector2(3.15f, 4.9f);
+    public Vector2 minPos
     {
-        return Instantiate(gameObject);
+        get
+        {
+            return curMinPos;
+        }
     }
-
+    public Vector2 maxPos
+    {
+        get
+        {
+            return curMaxPos;
+        }
+    }
 }
