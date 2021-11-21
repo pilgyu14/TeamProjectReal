@@ -1092,7 +1092,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4dc1c15148adee74785a3b7f760a8fd0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1742,7 +1742,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 98ad1f8d071527a4e8c81214d9c9f9a2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1862,6 +1862,7 @@ MonoBehaviour:
   HPSlider: {fileID: 849979513}
   BackHPSlider: {fileID: 2070252521}
   currentHP: 1000
+  MaxHP: 1000
 --- !u!1 &897395342
 GameObject:
   m_ObjectHideFlags: 0
@@ -3253,13 +3254,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullet: {fileID: 6351038218474380260, guid: 32f45edba3d556b40a3621e770c92a13, type: 3}
-  trans: {fileID: 1773701428}
   playerTrans: {fileID: 695430082}
   speed: 3
   enemyCanvasGo: {fileID: 849979511}
   objectType: 0
+  playerTransform: {fileID: 695430082}
   laser: {fileID: 0}
-  laserCount: 10
+  parentTrans: {fileID: 1773701428}
+  rotationBullet: {fileID: 1773701429}
 --- !u!61 &1492588952
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3723,13 +3725,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1773701428}
+  - component: {fileID: 1773701429}
   m_Layer: 7
-  m_Name: GameObject (2)
+  m_Name: PowerCodeTrans
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1773701428
 Transform:
   m_ObjectHideFlags: 0
@@ -3738,12 +3741,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1773701427}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.47, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0}
   m_Children: []
   m_Father: {fileID: 1492588955}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1773701429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773701427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe3a49715a66ab48985c4569d67aa50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angle: 0
+  maxTime: 10
+  enemy: {fileID: 1492588951}
 --- !u!1 &1804622849
 GameObject:
   m_ObjectHideFlags: 0
@@ -4359,7 +4377,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ec06042575177d1498db206dc021a252, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

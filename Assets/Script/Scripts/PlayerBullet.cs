@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerBullet : MonoBehaviour
 {
     [SerializeField]
-    private float speed = 5f; 
+    private float speed = 5f;
+    public int dmg = 1;
     void Update()
     {
         transform.Translate(Vector2.up * speed * Time.deltaTime);
