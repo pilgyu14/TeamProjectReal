@@ -8,17 +8,23 @@ public class WayPointMove : MonoBehaviour
     Transform[] WayPoint; //위치 배열
     [SerializeField]
     float speed = 3f; 
-    int WayPointNum = 0; 
+    int WayPointNum = 0;
+    bool waypointposition = false;
     void Start()
     {
-        transform.position = WayPoint[WayPointNum].transform.position;
+        
     }
 
     void Update()
     {
+        CheckLimit();
         if(transform.position.y < 6f)
         {
             WayPointMovePath();
+            if (waypointposition == true)
+                return;
+            transform.position = WayPoint[WayPointNum].transform.position;
+            waypointposition = true;
         }
         else
         {
@@ -40,6 +46,14 @@ public class WayPointMove : MonoBehaviour
         if(WayPointNum == WayPoint.Length)
         {
             WayPointNum = 0;
+        }
+    }
+
+    private void CheckLimit()
+    {
+        if (transform.position.y < -7f)
+        {
+            Destroy(gameObject);
         }
     }
 }
