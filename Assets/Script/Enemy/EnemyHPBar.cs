@@ -41,7 +41,7 @@ public class EnemyHPBar : MonoBehaviour
     public void Damaged(float hp)
     {
         currentHP = hp;
-        Invoke("BackDamaged", 0.5f);
+        Invoke("BackDamaged", 0.3f);
     }
     void BackDamaged()
     {
@@ -49,6 +49,9 @@ public class EnemyHPBar : MonoBehaviour
     }
     public void Init()
     {
+        BackHPSlider.gameObject.SetActive(false);
+        gameObject.SetActive(false);
         HPSlider.value = 1f;
+        HPSlider.value = 1f; 
     }
 }

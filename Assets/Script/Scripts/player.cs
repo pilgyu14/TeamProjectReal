@@ -15,14 +15,27 @@ public class player : MonoBehaviour
     private SpriteRenderer[] childSprite;
 
     private float currentDelay = 0f;
-    private float maxDelay = 0.3f;  //공격속도
+
+    public float maxDelay = 0.2f;  //공격속도
     public int bulletcnt = 1; // 총알을 몇 개 발사할 것인가 / 
     bool isDamaged = true;
     private float h, v;
 
+    [Header("스킬")]
+    [SerializeField]
+    private GameObject skillBarrier;
+    [SerializeField]
+    private GameObject wing; 
 
+    enum BulletType
+    {
+        basicBullet,
+        swordBullet
+    }
+    BulletType bulletType;
     private void Start()
     {
+         bulletType = BulletType.basicBullet;
         playerSprite = GetComponent<SpriteRenderer>();
         childSprite = GetComponentsInChildren<SpriteRenderer>();
     }
@@ -32,6 +45,8 @@ public class player : MonoBehaviour
         Move();
         Reload();
         Fire();
+        if (Input.GetKeyDown(KeyCode.Q))
+            StartCoroutine(BarrierRecovery());
     }
     void CheckPos()
     {
@@ -60,56 +75,104 @@ public class player : MonoBehaviour
 
     }
 
+    void SwordFire()
+    {
+        if (bulletcnt == 1)
+        {
+            GameObject bullet;
+            bullet = ObjectPool.Instance.GetObject(PoolObjectType.playerBullet_Sword);
+            bullet.transform.position = transform.position;
+            bullet.transform.rotation = Quaternion.identity;
+            bullet.transform.SetParent(null);
+        }
+        else if (bulletcnt == 2)
+        {
+            GameObject bulletL;
+            GameObject bulletR;
+            bulletL = ObjectPool.Instance.GetObject(PoolObjectType.playerBullet_Sword);
+            bulletR = ObjectPool.Instance.GetObject(PoolObjectType.playerBullet_Sword);
+            bulletL.transform.position = transform.position + Vector3.left * 0.1f;
+            bulletR.transform.position = transform.position + Vector3.right * 0.1f;
+            bulletL.transform.rotation = Quaternion.identity;
+            bulletR.transform.rotation = Quaternion.identity;
+            bulletL.transform.SetParent(null);
+            bulletR.transform.SetParent(null);
+        }
+    }
+
+    void BasicFire()
+    {
+        if (bulletcnt == 1)
+        {
+            GameObject bullet;
+            bullet = ObjectPool.Instance.GetObject(PoolObjectType.playerBullet);
+            bullet.transform.position = transform.position;
+            bullet.transform.rotation = Quaternion.identity;
+            bullet.transform.SetParent(null);
+        }
+        else if (bulletcnt == 2)
+        {
+            GameObject bulletL;
+            GameObject bulletR;
+            bulletL = ObjectPool.Instance.GetObject(PoolObjectType.playerBullet);
+            bulletR = ObjectPool.Instance.GetObject(PoolObjectType.playerBullet);
+            bulletL.transform.position = transform.position + Vector3.left * 0.1f;
+            bulletR.transform.position = transform.position + Vector3.right * 0.1f;
+            bulletL.transform.rotation = Quaternion.identity;
+            bulletR.transform.rotation = Quaternion.identity;
+            bulletL.transform.SetParent(null);
+            bulletR.transform.SetParent(null);
+        }
+    }
     void Fire()
     {
         if (currentDelay < maxDelay)
             return;
         if (Input.GetKey(KeyCode.Space))
         {
-            if (bulletcnt == 1)
+            switch(bulletType)
             {
-                GameObject bullet;
-                bullet = ObjectPool.Instance.GetObject(PoolObjectType.playerBullet);
-                bullet.transform.position = transform.position;
-                bullet.transform.rotation = Quaternion.identity;
-                bullet.transform.SetParent(null);
+                case BulletType.basicBullet:
+                    BasicFire();
+                    break;
+
+                case BulletType.swordBullet:
+                    SwordFire();
+                    break;
             }
-            else if (bulletcnt == 2)
-            {
-                GameObject bulletL;
-                GameObject bulletR;
-                bulletL = ObjectPool.Instance.GetObject(PoolObjectType.playerBullet);
-                bulletR = ObjectPool.Instance.GetObject(PoolObjectType.playerBullet);
-                bulletL.transform.position = transform.position + Vector3.left * 0.1f;
-                bulletR.transform.position = transform.position + Vector3.right * 0.1f;
-                bulletL.transform.rotation = Quaternion.identity;
-                bulletR.transform.rotation = Quaternion.identity;
-                bulletL.transform.SetParent(null);
-                bulletR.transform.SetParent(null);
-            }
+
         }
         currentDelay = 0f;
     }
 
-    void Reload()
+    public void Reload()
     {
         currentDelay += Time.deltaTime;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (isDamaged == false) return;
+        if(barrierCount == 0 )
+        {
+            //GameManager.Instance.
+            //게임 오버 
+        }
         if (collision.CompareTag("playerBullet")) return;
         else if (collision.CompareTag("bullet_Type0"))
         {
             barrierDestroy();
             ObjectPool.Instance.ReturnObject(PoolObjectType.bullet_Type0, collision.gameObject);
-
         }
         else if (collision.CompareTag("bullet_Type1"))
         {
             barrierDestroy();
             ObjectPool.Instance.ReturnObject(PoolObjectType.bullet_Type1, collision.gameObject);
 
+        }
+        else if(collision.CompareTag("bullet_Type2"))
+        {
+            barrierDestroy();
+            ObjectPool.Instance.ReturnObject(PoolObjectType.bullet_Type2, collision.gameObject);
         }
     }
 
@@ -135,7 +198,6 @@ public class player : MonoBehaviour
         float delay = 0.3f;
         int count = 2;
 
-
         for (int i = 0; i < count; i++)
         {
             color.a = 0.5f;
@@ -156,5 +218,48 @@ public class player : MonoBehaviour
         {
             childSprite[i].color = color;
         }
+    }
+
+    public void EmiliaSkill()
+    {
+        isDamaged = false; 
+    }
+     IEnumerator BarrierRecovery()
+    {
+        if (barrierCount == 3)
+            yield return null; 
+        isDamaged = false; 
+        float delay = 0.3f;
+        
+        switch(barrierCount)
+        {
+            case 0:
+                barrier[0].SetActive(true);
+                barrierUI[0].SetActive(true);
+                break;
+            case 1:
+                barrier[1].SetActive(true);
+                barrierUI[1].SetActive(true);
+                break;
+            case 2:
+                barrier[2].SetActive(true);
+                barrierUI[2].SetActive(true);
+                break;
+        }
+        barrierCount++;
+        Debug.Log("에밀리아 발동");
+        //전부 힐
+        //while (barrierCount < 3)
+        //{
+        //    barrierCount++;
+        //}
+        //for (int i = 0;         i < barrier.Length; i++)
+        //{
+        //    barrier[i].SetActive(true);
+        //    barrierUI[i].SetActive(true);
+        //    yield return new WaitForSeconds(delay);
+        //}
+        yield return new WaitForSeconds(1f);
+        isDamaged = true;
     }
 }

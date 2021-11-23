@@ -9,7 +9,7 @@ public class PowerCode : MonoBehaviour
     [SerializeField]
     float maxTime = 10f; 
 
-    public Enemy enemy;
+    public BasicBoss basicBoss;
 
     bool isDirChange = false;
     float time = 0f;
@@ -17,17 +17,14 @@ public class PowerCode : MonoBehaviour
 
     private void OnEnable()
     {
-        
         transform.rotation = Quaternion.identity;
         StartCoroutine(ChangeDir());
-
     }
     void Update()
     {
         Move(); 
         CheckTime();
         angle = Mathf.Lerp(startAngle, endAngle, time * 0.15f);
-        Debug.Log(angle);
        
     }
 
@@ -36,7 +33,7 @@ public class PowerCode : MonoBehaviour
         time += Time.deltaTime;
         if (time >= maxTime)
         {
-            enemy.ClearRotateBullet();
+            basicBoss.ClearRotateBullet();
             gameObject.SetActive(false);
             angle = 30f; 
             time = 0f;

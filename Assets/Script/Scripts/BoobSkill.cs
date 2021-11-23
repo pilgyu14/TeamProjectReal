@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using DG.Tweening;
 
 
-public class PlayerSkill : MonoBehaviour
+public class BoobSkill : MonoBehaviour
 {
     private CircleCollider2D col;
 
@@ -15,7 +15,8 @@ public class PlayerSkill : MonoBehaviour
     private float timeCount = 0f;
     private float maxTime = 100f; 
     private float minusCount = 3f;
-    private bool IsCoolTime = false; 
+    private bool IsCoolTime = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,28 +30,28 @@ public class PlayerSkill : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
-            if (IsCoolTime == true) return; 
+            if (IsCoolTime == true) return;
             Explossion();
-            ;
-            timeCount = 100f; 
+            timeCount = 100f;
+            Debug.Log("2");
         }
         DoCoolTime();
         timeCount -= minusCount * Time.deltaTime;
     }
     void Explossion()
     {
+        Debug.Log("1");
         IsCoolTime = true;
         col.enabled = true;
-        transform.DOScale(new Vector3(70, 1, 1), 1f).OnComplete(() => col.enabled = false);
+        transform.DOScale(new Vector3(100, 1, 1), 1f).OnComplete(() => col.enabled = false);
         transform.localScale = new Vector3(1, 1, 1);
-
     }
 
     void DoCoolTime()
     {
+        coolTime.fillAmount = timeCount / 100f;
         if (coolTime.fillAmount == 0)
             IsCoolTime = false; 
-        coolTime.fillAmount = timeCount / 100f; 
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

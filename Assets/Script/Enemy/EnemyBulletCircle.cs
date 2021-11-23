@@ -10,13 +10,13 @@ using UnityEngine;
 
     void check()
     {
-        if (transform.position.x > 3.2)
+        if (transform.position.x > GameManager.Instance.maxPos.x + 3)
             ObjectPool.Instance.ReturnObject(PoolObjectType.bullet_Type0, gameObject);
-        if (transform.position.x < -9.8)
+        if (transform.position.x < GameManager.Instance.minPos.x - 3)
             ObjectPool.Instance.ReturnObject(PoolObjectType.bullet_Type0, gameObject);
-        if (transform.position.y > 5.6)
+        if (transform.position.y > GameManager.Instance.maxPos.y + 3)
             ObjectPool.Instance.ReturnObject(PoolObjectType.bullet_Type0, gameObject);
-        if (transform.position.y < -5.6)
+        if (transform.position.y < GameManager.Instance.minPos.y - 3)
             ObjectPool.Instance.ReturnObject(PoolObjectType.bullet_Type0, gameObject);
 
     }
@@ -24,10 +24,6 @@ using UnityEngine;
     {
         check();
      //   transform.Translate(Vector2.right  * Time.deltaTime, Space.Self);
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-      
     }
 
 }
