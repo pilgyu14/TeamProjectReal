@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using DG.Tweening;
 
 
-public class BoobSkill : MonoBehaviour
+public class BombSkill : MonoBehaviour
 {
     private CircleCollider2D col;
 
@@ -32,7 +32,7 @@ public class BoobSkill : MonoBehaviour
         {
             if (IsCoolTime == true) return;
             Explossion();
-            timeCount = 100f;
+            timeCount = 50f;
             Debug.Log("2");
         }
         DoCoolTime();
