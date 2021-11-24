@@ -12,39 +12,46 @@ public class EnemyHPBar : MonoBehaviour
     private Slider HPSlider;
     [SerializeField]
     private Slider BackHPSlider;
-    private bool backHphit = false; 
+    private bool backHphit = false;
 
-    public float currentHP; 
-    private float MaxHP = 1000f; 
-   
+    public float currentHP = 100f;
+    [SerializeField]
+    private float MaxHP = 100f;
+
     void Start()
     {
-               
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        Debug.Log(currentHP);
+        //Debug.Log(currentHP);
         //transform.position = enemy.position;
-        HPSlider.value =Mathf.Lerp(HPSlider.value ,currentHP / MaxHP,5f*Time.deltaTime);
+        HPSlider.value = Mathf.Lerp(HPSlider.value, currentHP / MaxHP, 5f * Time.deltaTime);
         if (backHphit)
         {
-            BackHPSlider.value = Mathf.Lerp(BackHPSlider.value,HPSlider.value, 10f * Time.deltaTime);
+            BackHPSlider.value = Mathf.Lerp(BackHPSlider.value, HPSlider.value, 10f * Time.deltaTime);
             if (HPSlider.value >= BackHPSlider.value - 0.01f)
             {
                 BackHPSlider.value = HPSlider.value;
                 backHphit = false;
             }
-        }   
+        }
     }
-    public void Damaged()
+    public void Damaged(float hp)
     {
-        currentHP -= 30f;
-        Invoke("BackDamaged", 0.5f);
+        currentHP = hp;
+        Invoke("BackDamaged", 0.3f);
     }
     void BackDamaged()
     {
-        backHphit = true; 
+        backHphit = true;
+    }
+    public void Init()
+    {
+        BackHPSlider.gameObject.SetActive(false);
+        gameObject.SetActive(false);
+        HPSlider.value = 1f;
+        HPSlider.value = 1f; 
     }
 }

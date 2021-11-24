@@ -11,6 +11,9 @@ TagManager:
   - bullet_Type2
   - bullet_Type3
   - playerBullet
+  - skill1
+  - skill2
+  - skill3
   layers:
   - Default
   - TransparentFX
@@ -18,10 +21,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - PLAYER
+  - ENEMY
+  - PLAYERBULLET
+  - ENEMYBULLET
   - 
   - 
   - 
@@ -47,4 +50,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: PLAYER
+    uniqueID: 398244819
+    locked: 0
+  - name: UI
+    uniqueID: 3190228417
     locked: 0

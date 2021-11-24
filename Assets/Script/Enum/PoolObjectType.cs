@@ -2,6 +2,8 @@
 {
     bullet_Type0,
     bullet_Type1,
-    laser,
-    playerBullet
+    bullet_Type2,
+    playerBullet,
+    playerBullet_Sword
+
 }
