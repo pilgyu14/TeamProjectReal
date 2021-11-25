@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoSingleton<GameManager>
 {
+    [SerializeField]
+    public GameObject Player = null;
+
     public player player
     {
         get;
