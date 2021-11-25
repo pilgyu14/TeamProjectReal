@@ -4,7 +4,7 @@ using UnityEngine;
 public class player : MonoBehaviour
 {
     [SerializeField]
-    private float speed = 5f;
+    public float speed = 5f;
     [SerializeField]
     private GameObject bullet;
     [SerializeField]
@@ -13,6 +13,9 @@ public class player : MonoBehaviour
     public GameObject[] barrierUI;
     private SpriteRenderer playerSprite;
     private SpriteRenderer[] childSprite;
+
+    [SerializeField]
+    public bool isTimeSlow = false;
 
     private float currentDelay = 0f;
 
@@ -62,8 +65,12 @@ public class player : MonoBehaviour
 
         transform.position += moveDir.normalized * speed * Time.deltaTime;
 
+        if (isTimeSlow)
+            speed = 1f;
+
         if (Input.GetKey(KeyCode.LeftShift))
         {
+            if (isTimeSlow) return;
             speed = 2f;
         }
 
@@ -71,7 +78,6 @@ public class player : MonoBehaviour
         {
             speed = 5f;
         }
-
 
     }
 
@@ -157,7 +163,6 @@ public class player : MonoBehaviour
             //GameManager.Instance.
             //게임 오버 
         }
-        if (collision.CompareTag("playerBullet")) return;
         else if (collision.CompareTag("bullet_Type0"))
         {
             barrierDestroy();

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using DG.Tweening;
 
 
-public class BoobSkill : MonoBehaviour
+public class BombSkill : MonoBehaviour
 {
     private CircleCollider2D col;
 
@@ -32,7 +32,7 @@ public class BoobSkill : MonoBehaviour
         {
             if (IsCoolTime == true) return;
             Explossion();
-            timeCount = 100f;
+            timeCount = 50f;
             Debug.Log("2");
         }
         DoCoolTime();
@@ -41,10 +41,11 @@ public class BoobSkill : MonoBehaviour
     void Explossion()
     {
         Debug.Log("1");
-        IsCoolTime = true;
+        col.enabled = false;
+        Sequence seq = DOTween.Sequence();
+        seq.Append(transform.DOScale(new Vector3(50, 50, 50), 1.5f));
+        seq.Append(transform.DOScale(new Vector3(0.1f, 0.1f, 0.1f), 0.1f));
         col.enabled = true;
-        transform.DOScale(new Vector3(100, 1, 1), 1f).OnComplete(() => col.enabled = false);
-        transform.localScale = new Vector3(1, 1, 1);
     }
 
     void DoCoolTime()
@@ -56,7 +57,6 @@ public class BoobSkill : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("스킬 충돌");
-        if (collision.tag == "player" || collision.tag == "playerBullet") return;
         if(collision.tag == "bullet_Type0")
             ObjectPool.Instance.ReturnObject(PoolObjectType.bullet_Type0, collision.gameObject);
         else if(collision.tag == "bullet_Type1")
