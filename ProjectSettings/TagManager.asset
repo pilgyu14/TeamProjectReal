@@ -5,7 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - player
-  - bullet
   - bullet_Type0
   - bullet_Type1
   - bullet_Type2
@@ -14,6 +13,9 @@ TagManager:
   - skill1
   - skill2
   - skill3
+  - Bullet
+  - Enemy
+  - PlayerBullet
   layers:
   - Default
   - TransparentFX

@@ -14,6 +14,8 @@ public class EnemyShooting : MonoBehaviour
     private GameObject bulletPrefab = null;
     [SerializeField]
     private float fireRate = 0.2f;
+    [SerializeField]
+    private int i = 0;
 
     private float timer = 0f;
     private GameObject newBullet = null;
@@ -34,18 +36,18 @@ public class EnemyShooting : MonoBehaviour
         animator = GetComponent<Animator>();
         col = GetComponent<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        StartCoroutine(Move());
     }
 
     void Update()
     {
         if (isDead) return;
-        Move();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (isDead) return;
-        if (collision.CompareTag("Bullet"))
+        if (collision.CompareTag("PlayerBullet"))
         {
             Destroy(collision.gameObject);
             if (hp > 1)
@@ -79,31 +81,34 @@ public class EnemyShooting : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void Move()
+    public IEnumerator Move()
     {
-
-        timer += Time.deltaTime;
-        diff = gameManager.Player.transform.position - transform.position;
-        diff.Normalize();
-        for (int i = 0; i < 3; i++)
+        while (true)
         {
-            newBullet = Instantiate(bulletPrefab, transform);
-            newBullet.transform.SetParent(null);
-
-            rotationZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-
-            if (i == 1)
+            if(transform.position.y < 6f)
             {
-                rotationZ = rotationZ - 45;
-            }
-            else if (i == 2)
-            {
-                rotationZ = rotationZ + 45;
-            }
+                diff = gameManager.Player.transform.position - transform.position;
+                diff.Normalize();
+                for (i = 0; i < 3; i++)
+                {
+                    newBullet = Instantiate(bulletPrefab, transform);
+                    newBullet.transform.SetParent(null);
 
-            newBullet.transform.rotation = Quaternion.Euler(0f, 0f, rotationZ - 90f);
+                    rotationZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+
+                    if (i == 1)
+                    {
+                        rotationZ = rotationZ - 20;
+                    }
+                    else if (i == 2)
+                    {
+                        rotationZ = rotationZ + 20;
+                    }
+
+                    newBullet.transform.rotation = Quaternion.Euler(0f, 0f, rotationZ - 90f);
+                }
+                yield return new WaitForSeconds(0.2f);
+            }
         }
     }
-
-
 }

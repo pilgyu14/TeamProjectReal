@@ -47,6 +47,6 @@ public class GameManager : MonoSingleton<GameManager>
     }
     private void FixedUpdate()
     {
-        direction = player.transform.position - boss.transform.position;
+        //direction = player.transform.position - boss.transform.position;
     }
 }
