@@ -5,7 +5,7 @@ using DG.Tweening;
 
 public class TimeSlow : MonoBehaviour
 {
-    player play;
+    Player play;
 
     private CircleCollider2D col;
     private Sprite sprite;
@@ -14,7 +14,7 @@ public class TimeSlow : MonoBehaviour
     {
         col = GetComponent<CircleCollider2D>();
         sprite = GetComponent<Sprite>();
-        play = FindObjectOfType<player>();
+        play = FindObjectOfType<Player>();
     }
 
     void Update()

@@ -16,7 +16,7 @@ public class GuidedMsaileTest : MonoBehaviour
     float endDistance = 0.3f; 
     void Start()
     {
-        targetTrs = FindObjectOfType<player>().transform;
+        targetTrs = FindObjectOfType<Player>().transform;
         rigid = GetComponent<Rigidbody2D>(); 
      }
 

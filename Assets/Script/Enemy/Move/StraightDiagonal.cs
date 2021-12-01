@@ -23,7 +23,15 @@ public class StraightDiagonal : MonoBehaviour
 
     private void CheckLimit()
     {
-        if (transform.position.y < -7f)
+        if (transform.position.y < -6f)
+        {
+            Destroy(gameObject);
+        }
+        if (transform.position.x < -8f)
+        {
+            Destroy(gameObject);
+        }
+        if (transform.position.y < 1f)
         {
             Destroy(gameObject);
         }
