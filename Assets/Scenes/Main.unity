@@ -228,7 +228,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 695430079}
-  TalkText: {fileID: 0}
   boss: {fileID: 1492588950}
 --- !u!4 &37315641
 Transform:
@@ -1531,8 +1530,8 @@ GameObject:
   m_Component:
   - component: {fileID: 695430082}
   - component: {fileID: 695430081}
-  - component: {fileID: 695430084}
   - component: {fileID: 695430080}
+  - component: {fileID: 695430084}
   - component: {fileID: 695430083}
   m_Layer: 6
   m_Name: Player
@@ -1659,20 +1658,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  bullet: {fileID: 0}
+  bullet: {fileID: 2774900118778142202, guid: 3f8571b75f3bfa541bca0c0eaa40eecc, type: 3}
   barrierCount: 3
   barrier:
-  - {fileID: 817767207}
-  - {fileID: 2098512647}
-  - {fileID: 540955369}
-  barrierUI:
-  - {fileID: 654057326}
-  - {fileID: 23447193}
-  - {fileID: 480708361}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  barrierUI: []
   isTimeSlow: 0
   maxDelay: 0.2
   bulletcnt: 1
-  skillBarrier: {fileID: 1488647027}
+  skillBarrier: {fileID: 0}
   wing: {fileID: 0}
 --- !u!1 &731619191
 GameObject:
@@ -3323,11 +3319,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1488595776}
   m_CullTransparentMesh: 1
---- !u!1 &1488647027 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9073620960736497277, guid: 3b4ad54d0be031249aaf0f771eca70c6, type: 3}
-  m_PrefabInstance: {fileID: 4146533301111774838}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1492588950
 GameObject:
   m_ObjectHideFlags: 0
