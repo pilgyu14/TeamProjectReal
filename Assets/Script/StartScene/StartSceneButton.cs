@@ -12,7 +12,7 @@ public class StartSceneButton : MonoBehaviour
 
     public void OnClickStart()
     {
-        SceneManager.LoadScene("Main"); // 메인 말고 중간 씬 있어야 할 듯
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Enemy"); // 메인 말고 중간 씬 있어야 할 듯
     }
 
     public void OnClickSetting()

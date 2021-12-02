@@ -39,12 +39,10 @@ public class GameManager : MonoSingleton<GameManager>
 
     private void Awake()
     {
+        DontDestroyOnLoad(gameObject);
         player = FindObjectOfType<Player>();
     }
-    private void Start()
-    {
-       
-    }
+
     private void FixedUpdate()
     {
         //direction = player.transform.position - boss.transform.position;

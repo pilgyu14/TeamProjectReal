@@ -31,7 +31,7 @@ public class StraightDiagonal : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        if (transform.position.y < 1f)
+        if (transform.position.x > 3f)
         {
             Destroy(gameObject);
         }

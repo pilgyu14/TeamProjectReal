@@ -16,19 +16,16 @@ public class BulletMove : MonoBehaviour
     {
         if (transform.position.x < -10f)
         {
-            Destroy(gameObject);
+            ObjectPool.Instance.ReturnObject(PoolObjectType.Bullet, gameObject);
         }
-        if (transform.position.x > 20f)
+        if (transform.position.x > 10f)
         {
-            Destroy(gameObject);
         }
         if (transform.position.y < -7f)
         {
-            Destroy(gameObject);
         }
-        if (transform.position.y > 10f)
+        if (transform.position.y > 7f)
         {
-            Destroy(gameObject);
         }
     }
 }

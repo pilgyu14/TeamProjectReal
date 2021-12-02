@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EnemyHPBar : MonoBehaviour
 {
@@ -14,9 +15,9 @@ public class EnemyHPBar : MonoBehaviour
     private Slider BackHPSlider;
     private bool backHphit = false;
 
-    public float currentHP = 100f;
+    public float currentHP = 400f;
     [SerializeField]
-    private float MaxHP = 100f;
+    private float MaxHP = 400f;
 
     void Start()
     {
@@ -42,6 +43,10 @@ public class EnemyHPBar : MonoBehaviour
     {
         currentHP = hp;
         Invoke("BackDamaged", 0.3f);
+        if(currentHP <= 0)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Ending");
+        }
     }
     void BackDamaged()
     {

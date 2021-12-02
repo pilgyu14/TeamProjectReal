@@ -6,6 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Start.unity
+    guid: c2b29bdfd2a74ba468dea7843ecbea03
+  - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/MiddleScenes.unity
+    guid: 4cfce02ce17364d43937341ca700b40d
+  - enabled: 1
+    path: Assets/Scenes/Enemy.unity
+    guid: 95521d393fa44ec47a549d274a38693e
+  - enabled: 1
+    path: Assets/Scenes/Dead.unity
+    guid: 97eaa5c3a7c96dd479c245cf90f54db7
+  - enabled: 1
+    path: Assets/Scenes/Ending.unity
+    guid: 6c8c392be44abc94f8c8c4735ae1d2fd
   m_configObjects: {}

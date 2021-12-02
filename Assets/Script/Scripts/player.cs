@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
         swordBullet
     }
     BulletType bulletType;
-    private void Start()
+    private void Awake()
     {
          bulletType = BulletType.basicBullet;
         playerSprite = GetComponent<SpriteRenderer>();
@@ -160,6 +160,7 @@ public class Player : MonoBehaviour
         if (isDamaged == false) return;
         if(barrierCount == 0 )
         {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Dead");
             //GameManager.Instance.
             //게임 오버 
         }
@@ -187,7 +188,8 @@ public class Player : MonoBehaviour
         if (barrierCount == 0)
         {
             //애니메이션 플레이 
-            //씬 넘어감 
+            //씬 넘어감
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Dead");
             return;
         }
         barrier[barrierCount - 1].SetActive(false);

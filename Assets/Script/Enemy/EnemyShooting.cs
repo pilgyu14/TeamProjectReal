@@ -103,7 +103,9 @@ public class EnemyShooting : MonoBehaviour
         diff.Normalize();
         for (i = 0; i < 3; i++)
         {
-            newBullet = Instantiate(bulletPrefab, transform);
+            //newBullet = Instantiate(bulletPrefab, transform);
+            newBullet = ObjectPool.Instance.GetObject(PoolObjectType.Bullet);
+            newBullet.transform.position = transform.position;
             newBullet.transform.SetParent(null);
             rotationZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
 
