@@ -61,14 +61,14 @@ public class EnemyShooting : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (isDead) return;
-        if (collision.CompareTag("PlayerBullet"))
+        if (collision.CompareTag("playerBullet"))
         {
             Destroy(collision.gameObject);
             if (hp > 1)
             {
                 if (isDamaged) return;
                 isDamaged = true;
-                StartCoroutine(Damaged());
+                StartCoroutine("Damaged");
                 return;
             }
             isDead = true;
