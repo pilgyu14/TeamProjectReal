@@ -13,7 +13,16 @@ public class GuidedMsaileTest : MonoBehaviour
     float axis = 0f;
 
     bool isTrack = true;
-    float endDistance = 0.3f; 
+    float endDistance = 6f;
+
+    public Vector3 targetPos;
+    public bool IsTargetting = false;
+    float time = 0;
+
+    private void OnEnable()
+    {
+        IsTargetting = false; 
+    }
     void Start()
     {
         targetTrs = FindObjectOfType<Player>().transform;
@@ -23,15 +32,27 @@ public class GuidedMsaileTest : MonoBehaviour
                                                                             
     void Update()
     {
-        target();
-        Move(); 
+        check(); 
+        if (IsTargetting)
+        {
+             target();
+             Move();
+        }
+        else
+            MovePoint();
+
     }
-    void rota()
+    public void MovePoint()
     {
-        Vector2 direction =GameManager.Instance.curDir;
-        rigid.AddForce(direction,ForceMode2D.Impulse);
-        //transform.rotation = Quaternion.Euler(0, 0, GameManager.Instance.curDir.);
-    }
+        //transform.position = Vector3.MoveTowards(transform.position, targetPos, Time.deltaTime);
+        transform.Translate(targetPos.normalized * Time.deltaTime * moveSpeed);
+        time += Time.deltaTime;
+        if (time >= 1f)
+        {
+            IsTargetting = true;
+            moveSpeed = Random.Range(3f, 8f);
+        }
+     }
     void target()
     {
         if (isTrack == false) return; 
@@ -43,7 +64,7 @@ public class GuidedMsaileTest : MonoBehaviour
         Vector3 vectorToTarget = myPos - targetPos;
 
         distance = (targetPos - myPos).sqrMagnitude;
-        Debug.Log(distance);
+        //Debug.Log(distance);
         if (distance < endDistance) { Debug.Log("ÃßÀû ³¡"); isTrack = false;  } 
         Vector3 quaternionToTarget = vectorToTarget;
 
@@ -54,5 +75,17 @@ public class GuidedMsaileTest : MonoBehaviour
     private void Move()
     {
         transform.Translate(Vector2.down * moveSpeed * Time.deltaTime);
+    }
+    void check()
+    {
+        if (transform.position.x > GameManager.Instance.maxPos.x + 3)
+            ObjectPool.Instance.ReturnObject(PoolObjectType.bullet_Type3, gameObject);
+        if (transform.position.x < GameManager.Instance.minPos.x - 3)
+            ObjectPool.Instance.ReturnObject(PoolObjectType.bullet_Type3, gameObject);
+        if (transform.position.y > GameManager.Instance.maxPos.y + 3)
+            ObjectPool.Instance.ReturnObject(PoolObjectType.bullet_Type3, gameObject);
+        if (transform.position.y < GameManager.Instance.minPos.y - 3)
+            ObjectPool.Instance.ReturnObject(PoolObjectType.bullet_Type3, gameObject);
+
     }
 }

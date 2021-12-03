@@ -52,6 +52,7 @@ public class SkillChan : MonoBehaviour
             {
                 SetColor(skillImage[i], 1);
                 skillImage[i].sprite = clickObject.GetComponent<Image>().sprite;
+                clickObject.SetActive(false);
                 return;
             }
 
@@ -73,7 +74,7 @@ public class SkillChan : MonoBehaviour
         //    SetColor(skillImage[0], 1);
         //    skillImage[2].sprite = clickObject.GetComponent<Image>().sprite;
         //}
-        clickObject.SetActive(false);
+
         //else
         //OnChangeImage() 이 함수 실행
 

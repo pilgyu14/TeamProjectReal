@@ -7,24 +7,33 @@ public class PowerCode : MonoBehaviour
     [SerializeField]
     float angle = 30;
     [SerializeField]
-    float maxTime = 10f; 
+    float maxTime = 1; 
 
-    public BasicBoss basicBoss;
+    private BasicBoss basicBoss;
 
     bool isDirChange = false;
     float time = 0f;
     float startAngle= 20f, endAngle= 100f; 
 
+    private bool IsHard = false;
+    public bool IsTime = true; 
     private void OnEnable()
     {
         transform.rotation = Quaternion.identity;
         StartCoroutine(ChangeDir());
     }
+    private void Start()
+    {
+        basicBoss = FindObjectOfType<BasicBoss>(); 
+    }
     void Update()
     {
-        Move(); 
-        CheckTime();
-        angle = Mathf.Lerp(startAngle, endAngle, time * 0.15f);
+        DIrChange();
+        if (IsTime)
+        {
+            CheckTime();
+        }
+            angle = Mathf.Lerp(startAngle, endAngle, time * 0.15f);
        
     }
 
@@ -33,13 +42,16 @@ public class PowerCode : MonoBehaviour
         time += Time.deltaTime;
         if (time >= maxTime)
         {
-            basicBoss.ClearRotateBullet();
-            gameObject.SetActive(false);
+            IsTime = false;
+            basicBoss.MoveToCenter();
+            //basicBoss.IsBack = true;
+            //basicBoss.think(); 
+            //gameObject.SetActive(false);
             angle = 30f; 
             time = 0f;
         }
     }
-    private void Move()
+    private void DIrChange()
     {
         if(isDirChange==false)
             transform.Rotate(new Vector3(0, 0, angle) * Time.deltaTime);
@@ -49,7 +61,7 @@ public class PowerCode : MonoBehaviour
   
     IEnumerator ChangeDir()
     {
-        float delay = 4f; 
+        float delay = 1f; 
         isDirChange = false; 
         yield return new WaitForSeconds(delay);
         isDirChange = true;
