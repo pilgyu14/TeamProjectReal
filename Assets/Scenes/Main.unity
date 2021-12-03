@@ -279,7 +279,8 @@ MonoBehaviour:
     - {fileID: 4908786937705301012, guid: cdab9860138d1cd4e9517cec8342e8e1, type: 3}
     - {fileID: 9073620960736497277, guid: 3b4ad54d0be031249aaf0f771eca70c6, type: 3}
     - {fileID: 2774900118778142202, guid: 3f8571b75f3bfa541bca0c0eaa40eecc, type: 3}
-    prefabCreateCounts: f40100002c0100002c0100002c0100002c010000
+    - {fileID: 2774900118778142202, guid: 3f8571b75f3bfa541bca0c0eaa40eecc, type: 3}
+    prefabCreateCounts: f40100002c0100002c0100002c0100002c0100002c010000
 --- !u!4 &126022790
 Transform:
   m_ObjectHideFlags: 0
