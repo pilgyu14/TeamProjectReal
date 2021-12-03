@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d950e73f452d334c9a2ad2fde914467, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 695430079}
+  player: {fileID: 0}
   boss: {fileID: 1492588950}
 --- !u!4 &37315641
 Transform:
