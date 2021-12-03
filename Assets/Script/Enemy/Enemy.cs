@@ -121,6 +121,7 @@ public class Enemy : MonoBehaviour
             yield return new WaitForSeconds(delay);
         }
     }
+
     void PowerCode()  //전깃줄
     {
 
@@ -379,9 +380,10 @@ public class Enemy : MonoBehaviour
         }
 
     }
-
+    int maxPatternIndex = 10;
     IEnumerator HeartShot() //하트 모양 발사 
     {
+        int angel = 360 / maxPatternIndex; 
 
         for (int j = 0; j < 5; j++)
         {
@@ -408,7 +410,7 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("보스 ");
+        //Debug.Log("보스 ");
         if (isDamaged) return;
         if (collision.gameObject.CompareTag("playerBullet"))
         {
