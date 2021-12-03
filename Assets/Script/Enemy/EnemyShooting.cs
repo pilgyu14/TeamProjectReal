@@ -61,10 +61,10 @@ public class EnemyShooting : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (isDead) return;
-        if (collision.CompareTag("PlayerBullet"))
+        if (collision.CompareTag("playerBullet"))
         {
             Destroy(collision.gameObject);
-            if (hp > 1)
+            if (hp > 3)//버그 수정 후 1로 바꿀 것
             {
                 if (isDamaged) return;
                 isDamaged = true;
@@ -90,7 +90,7 @@ public class EnemyShooting : MonoBehaviour
     {
         spriteRenderer.material.SetColor("_Color", new Color(0f, 0f, 0f, 0f));
         col.enabled = false;
-        SoundManager.instance.SFXPlay("Dead", clip);
+        //SoundManager.instance.SFXPlay("Dead", clip);
         // 폭발 "만들어줘"
         yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
