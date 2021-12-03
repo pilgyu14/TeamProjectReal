@@ -7,7 +7,7 @@ public class GameManager : MonoSingleton<GameManager>
     [SerializeField]
     public GameObject Player = null;
 
-    public player player
+    public Player player
     {
         get;
         private set; 
@@ -39,14 +39,12 @@ public class GameManager : MonoSingleton<GameManager>
 
     private void Awake()
     {
-        player = FindObjectOfType<player>();
+        DontDestroyOnLoad(gameObject);
+        player = FindObjectOfType<Player>();
     }
-    private void Start()
-    {
-       
-    }
+
     private void FixedUpdate()
     {
-        direction = player.transform.position - boss.transform.position;
+        //direction = player.transform.position - boss.transform.position;
     }
 }
