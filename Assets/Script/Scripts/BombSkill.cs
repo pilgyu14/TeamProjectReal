@@ -61,5 +61,7 @@ public class BombSkill : MonoBehaviour
             ObjectPool.Instance.ReturnObject(PoolObjectType.bullet_Type0, collision.gameObject);
         else if(collision.tag == "bullet_Type1")
             ObjectPool.Instance.ReturnObject(PoolObjectType.bullet_Type1, collision.gameObject);
+        else if (collision.tag == "bullet_Type3")
+            ObjectPool.Instance.ReturnObject(PoolObjectType.bullet_Type1, collision.gameObject);
     }
 }

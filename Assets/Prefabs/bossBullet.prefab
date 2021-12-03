@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1341937748918899494}
   - component: {fileID: 8016289651653014145}
   - component: {fileID: -3215710159973028333}
+  - component: {fileID: 6707929281645912089}
   m_Layer: 9
   m_Name: bossBullet
   m_TagString: bullet_Type2
@@ -112,3 +113,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db6264059ec4b7f49b0791f14fe224d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6707929281645912089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4908786937705301012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ded2b7a196fa3de43b1d69d650bdb262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineNum: 0
