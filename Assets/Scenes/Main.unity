@@ -214,7 +214,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &37315640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,13 +274,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectPoolData:
     prefabs:
+    - {fileID: 2774900118778142202, guid: ffa7887837b6a0f4fac5edaa28606e66, type: 3}
     - {fileID: 6351038218474380260, guid: 32f45edba3d556b40a3621e770c92a13, type: 3}
     - {fileID: 8635748430395208525, guid: 6a915feba50ad5f4aa4b3326780e3275, type: 3}
     - {fileID: 4908786937705301012, guid: cdab9860138d1cd4e9517cec8342e8e1, type: 3}
     - {fileID: 9073620960736497277, guid: 3b4ad54d0be031249aaf0f771eca70c6, type: 3}
     - {fileID: 2774900118778142202, guid: 3f8571b75f3bfa541bca0c0eaa40eecc, type: 3}
     - {fileID: 2774900118778142202, guid: 3f8571b75f3bfa541bca0c0eaa40eecc, type: 3}
-    prefabCreateCounts: f40100002c0100002c0100002c0100002c0100002c010000
+    prefabCreateCounts: c8000000c8000000c8000000c8000000c8000000c8000000c8000000
 --- !u!4 &126022790
 Transform:
   m_ObjectHideFlags: 0
@@ -841,7 +842,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ec06042575177d1498db206dc021a252, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
   m_FlipX: 0
   m_FlipY: 0
@@ -849,7 +850,7 @@ SpriteRenderer:
   m_Size: {x: 1.4545455, y: 1.4545455}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &458695462
@@ -1532,9 +1533,9 @@ GameObject:
   m_Component:
   - component: {fileID: 695430082}
   - component: {fileID: 695430081}
-  - component: {fileID: 695430084}
   - component: {fileID: 695430080}
   - component: {fileID: 695430083}
+  - component: {fileID: 695430084}
   m_Layer: 6
   m_Name: Player
   m_TagString: player
@@ -1660,7 +1661,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  bullet: {fileID: 0}
   barrierCount: 3
   barrier:
   - {fileID: 817767207}

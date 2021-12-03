@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class GameManager : MonoSingleton<GameManager>
 {
-    [SerializeField]
-    public GameObject Player = null;
+    public Player player;
 
-    public Player player
-    {
-        get;
-        private set; 
-    }
+    //public Player player
+    //{
+    //    get;
+    //    private set; 
+    //}
 
     public GameObject boss; 
     private Vector2 curMinPos = new Vector2(-8.8f, -4.9f);

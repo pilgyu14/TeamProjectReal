@@ -428,7 +428,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &87406299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4211,7 +4211,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1160502330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5834,12 +5834,12 @@ GameObject:
   - component: {fileID: 1659697254}
   - component: {fileID: 1659697256}
   m_Layer: 0
-  m_Name: bullet
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1659697254
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5918,7 +5918,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  bullet: {fileID: 2774900118778142202, guid: 3f8571b75f3bfa541bca0c0eaa40eecc, type: 3}
   barrierCount: 3
   barrier:
   - {fileID: 0}

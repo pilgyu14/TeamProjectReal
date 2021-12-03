@@ -51,7 +51,7 @@ public class EnemyShooting : MonoBehaviour
             timer += Time.deltaTime;
             if(timer > waitingTime)
             {
-                StartCoroutine("Shooting");
+                StartCoroutine(Shooting());
                 timer = 0;
             }
         }
@@ -99,7 +99,7 @@ public class EnemyShooting : MonoBehaviour
     public IEnumerator Shooting()
     {
         //if (isDead == false) yield break;
-        diff = gameManager.Player.transform.position - transform.position;
+        diff = GameManager.Instance.player.transform.position - transform.position;
         diff.Normalize();
         for (i = 0; i < 3; i++)
         {
