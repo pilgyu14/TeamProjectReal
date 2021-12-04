@@ -434,7 +434,7 @@ public class Boss2 : MonoBehaviour
     {
        
         float delay = 0.5f;
-        int loopsCount = 6; 
+        int loopsCount = 4; 
         curMovePatternCount++;
         Debug.Log("ÁÂ¿ì ½ÇÇà" + curMovePatternCount);
 
