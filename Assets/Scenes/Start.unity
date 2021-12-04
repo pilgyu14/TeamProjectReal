@@ -355,7 +355,7 @@ GameObject:
   - component: {fileID: 565148221}
   - component: {fileID: 565148220}
   m_Layer: 0
-  m_Name: Amelia
+  m_Name: Emilia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -814,7 +814,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: EXIT
+  m_Text: "\uB098\uAC00\uAE30"
 --- !u!222 &878744070
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -57,10 +57,12 @@ public class BombSkill : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("스킬 충돌");
-        if(collision.tag == "bullet_Type0")
+        if (collision.tag == "bullet_Type0")
             ObjectPool.Instance.ReturnObject(PoolObjectType.bullet_Type0, collision.gameObject);
-        else if(collision.tag == "bullet_Type1")
+        else if (collision.tag == "bullet_Type1")
             ObjectPool.Instance.ReturnObject(PoolObjectType.bullet_Type1, collision.gameObject);
+        else if (collision.tag == "bullet_Type2")
+            ObjectPool.Instance.ReturnObject(PoolObjectType.bullet_Type2, collision.gameObject);
         else if (collision.tag == "bullet_Type3")
             ObjectPool.Instance.ReturnObject(PoolObjectType.bullet_Type1, collision.gameObject);
     }
