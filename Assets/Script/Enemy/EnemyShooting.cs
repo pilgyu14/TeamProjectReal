@@ -64,7 +64,7 @@ public class EnemyShooting : MonoBehaviour
         if (collision.CompareTag("playerBullet"))
         {
             Destroy(collision.gameObject);
-            if (hp > 3)//버그 수정 후 1로 바꿀 것
+            if (hp > 1)//버그 수정 후 1로 바꿀 것
             {
                 if (isDamaged) return;
                 isDamaged = true;
@@ -80,9 +80,9 @@ public class EnemyShooting : MonoBehaviour
     private IEnumerator Damaged()
     {
         hp--;
-        spriteRenderer.material.SetColor("_Color", new Color(1f, 1f, 1f, 0f));
-        yield return new WaitForSeconds(0.1f);
         spriteRenderer.material.SetColor("_Color", new Color(0f, 0f, 0f, 0f));
+        yield return new WaitForSeconds(0.1f);
+        spriteRenderer.material.SetColor("_Color", new Color(1f, 1f, 1f, 1f));
         isDamaged = false;
     }
 

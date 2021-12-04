@@ -47,7 +47,7 @@ public class TimeSlow : MonoBehaviour
         if (collision.CompareTag("player"))
         {
             play.isTimeSlow = false;
-            play.speed = 5f;
+            play.curSpeed = 5f;
         }
     }
 }

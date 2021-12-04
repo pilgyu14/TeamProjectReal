@@ -12,9 +12,10 @@ public class BombSkill : MonoBehaviour
     //스킬 쿨타임
     [SerializeField]
     private Image coolTime;
+    [SerializeField] private Text coolTimeText; 
     private float timeCount = 0f;
-    private float maxTime = 100f; 
-    private float minusCount = 3f;
+    private float maxTime = 45f; 
+    private float minusCount = 1f;
     private bool IsCoolTime = false;
 
     // Start is called before the first frame update
@@ -32,11 +33,20 @@ public class BombSkill : MonoBehaviour
         {
             if (IsCoolTime == true) return;
             Explossion();
-            timeCount = 50f;
+            timeCount = maxTime;
+            IsCoolTime = true; 
             Debug.Log("2");
         }
-        DoCoolTime();
-        timeCount -= minusCount * Time.deltaTime;
+        if (IsCoolTime)
+        {
+            coolTimeText.gameObject.SetActive(true);
+            DoCoolTime();
+            timeCount -= minusCount * Time.deltaTime;
+        }
+    }
+    void UpdateUI()
+    {
+        coolTimeText.text = string.Format("{0:F0}", timeCount);
     }
     void Explossion()
     {
@@ -50,17 +60,24 @@ public class BombSkill : MonoBehaviour
 
     void DoCoolTime()
     {
-        coolTime.fillAmount = timeCount / 100f;
+        coolTime.fillAmount = timeCount / maxTime;
+        UpdateUI();
         if (coolTime.fillAmount == 0)
-            IsCoolTime = false; 
+        {
+            IsCoolTime = false;
+            coolTimeText.gameObject.SetActive(false);
+
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("스킬 충돌");
-        if(collision.tag == "bullet_Type0")
+        if (collision.tag == "bullet_Type0")
             ObjectPool.Instance.ReturnObject(PoolObjectType.bullet_Type0, collision.gameObject);
-        else if(collision.tag == "bullet_Type1")
+        else if (collision.tag == "bullet_Type1")
             ObjectPool.Instance.ReturnObject(PoolObjectType.bullet_Type1, collision.gameObject);
+        else if (collision.tag == "bullet_Type2")
+            ObjectPool.Instance.ReturnObject(PoolObjectType.bullet_Type2, collision.gameObject);
         else if (collision.tag == "bullet_Type3")
             ObjectPool.Instance.ReturnObject(PoolObjectType.bullet_Type1, collision.gameObject);
     }
