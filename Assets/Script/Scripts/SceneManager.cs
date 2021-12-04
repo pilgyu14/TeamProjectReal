@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class SceneManager : MonoBehaviour
+public class Scenemanager : MonoBehaviour
 {
     [SerializeField]
     private GameObject Emilia;

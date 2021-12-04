@@ -4,16 +4,16 @@ using System.Collections.Generic;
 
 public class EnemyShooting : MonoBehaviour
 {
-    [SerializeField]
-    private int score = 10;
+    //[SerializeField]
+    //private int score = 10;
     [SerializeField]
     private int hp = 2;
     [SerializeField]
     protected float speed = 10f;
     [SerializeField]
     private GameObject bulletPrefab = null;
-    [SerializeField]
-    private float fireRate = 0.2f;
+    //[SerializeField]
+    //private float fireRate = 0.2f;
     [SerializeField]
     private int i = 0;
 
@@ -90,7 +90,7 @@ public class EnemyShooting : MonoBehaviour
     {
         spriteRenderer.material.SetColor("_Color", new Color(0f, 0f, 0f, 0f));
         col.enabled = false;
-        //SoundManager.instance.SFXPlay("Dead", clip);
+        SoundManager.instance.SFXPlay("Dead", clip);
         // Æø¹ß "¸¸µé¾îÁà"
         yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);

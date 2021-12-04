@@ -732,11 +732,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a0045b18dfa4e4a8411666942ef7d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 10
   hp: 2
   speed: 10
   bulletPrefab: {fileID: 2774900118778142202, guid: ffa7887837b6a0f4fac5edaa28606e66, type: 3}
-  fireRate: 0.2
   i: 2
   clip: {fileID: 8300000, guid: bd905134ff4a5ce4cbc4418d57513dbc, type: 3}
 --- !u!50 &106213509
@@ -1057,11 +1055,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a0045b18dfa4e4a8411666942ef7d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 10
   hp: 2
   speed: 10
   bulletPrefab: {fileID: 0}
-  fireRate: 0.2
   i: 0
   clip: {fileID: 0}
 --- !u!114 &255760754
@@ -1565,11 +1561,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a0045b18dfa4e4a8411666942ef7d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 10
   hp: 2
   speed: 10
   bulletPrefab: {fileID: 2774900118778142202, guid: ffa7887837b6a0f4fac5edaa28606e66, type: 3}
-  fireRate: 0.2
   i: 1
   clip: {fileID: 8300000, guid: bd905134ff4a5ce4cbc4418d57513dbc, type: 3}
 --- !u!95 &429412485
@@ -1823,11 +1817,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a0045b18dfa4e4a8411666942ef7d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 10
   hp: 2
   speed: 10
   bulletPrefab: {fileID: 2774900118778142202, guid: ffa7887837b6a0f4fac5edaa28606e66, type: 3}
-  fireRate: 0.2
   i: 2
   clip: {fileID: 8300000, guid: bd905134ff4a5ce4cbc4418d57513dbc, type: 3}
 --- !u!114 &492475146
@@ -2056,11 +2048,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a0045b18dfa4e4a8411666942ef7d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 10
   hp: 2
   speed: 10
   bulletPrefab: {fileID: 2774900118778142202, guid: ffa7887837b6a0f4fac5edaa28606e66, type: 3}
-  fireRate: 0.2
   i: 0
   clip: {fileID: 8300000, guid: bd905134ff4a5ce4cbc4418d57513dbc, type: 3}
 --- !u!114 &511245840
@@ -2378,11 +2368,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a0045b18dfa4e4a8411666942ef7d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 10
   hp: 2
   speed: 10
   bulletPrefab: {fileID: 2774900118778142202, guid: ffa7887837b6a0f4fac5edaa28606e66, type: 3}
-  fireRate: 0.2
   i: 1
   clip: {fileID: 8300000, guid: bd905134ff4a5ce4cbc4418d57513dbc, type: 3}
 --- !u!95 &517519529
@@ -2625,11 +2613,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a0045b18dfa4e4a8411666942ef7d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 10
   hp: 2
   speed: 10
   bulletPrefab: {fileID: 2774900118778142202, guid: ffa7887837b6a0f4fac5edaa28606e66, type: 3}
-  fireRate: 0.2
   i: 1
   clip: {fileID: 8300000, guid: bd905134ff4a5ce4cbc4418d57513dbc, type: 3}
 --- !u!114 &571327441
@@ -3067,11 +3053,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a0045b18dfa4e4a8411666942ef7d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 10
   hp: 2
   speed: 10
   bulletPrefab: {fileID: 2774900118778142202, guid: ffa7887837b6a0f4fac5edaa28606e66, type: 3}
-  fireRate: 0.2
   i: 0
   clip: {fileID: 8300000, guid: bd905134ff4a5ce4cbc4418d57513dbc, type: 3}
 --- !u!50 &730397585
@@ -3244,11 +3228,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a0045b18dfa4e4a8411666942ef7d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 10
   hp: 2
   speed: 10
   bulletPrefab: {fileID: 2774900118778142202, guid: ffa7887837b6a0f4fac5edaa28606e66, type: 3}
-  fireRate: 0.2
   i: 2
   clip: {fileID: 8300000, guid: bd905134ff4a5ce4cbc4418d57513dbc, type: 3}
 --- !u!95 &792779125
@@ -3463,11 +3445,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a0045b18dfa4e4a8411666942ef7d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 10
   hp: 2
   speed: 10
   bulletPrefab: {fileID: 2774900118778142202, guid: ffa7887837b6a0f4fac5edaa28606e66, type: 3}
-  fireRate: 0.2
   i: 2
   clip: {fileID: 8300000, guid: bd905134ff4a5ce4cbc4418d57513dbc, type: 3}
 --- !u!114 &795106927
@@ -3986,11 +3966,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a0045b18dfa4e4a8411666942ef7d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 10
   hp: 2
   speed: 10
   bulletPrefab: {fileID: 2774900118778142202, guid: ffa7887837b6a0f4fac5edaa28606e66, type: 3}
-  fireRate: 0.2
   i: 1
   clip: {fileID: 8300000, guid: bd905134ff4a5ce4cbc4418d57513dbc, type: 3}
 --- !u!114 &946188892
@@ -4506,11 +4484,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a0045b18dfa4e4a8411666942ef7d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 10
   hp: 2
   speed: 10
   bulletPrefab: {fileID: 2774900118778142202, guid: ffa7887837b6a0f4fac5edaa28606e66, type: 3}
-  fireRate: 0.2
   i: 2
   clip: {fileID: 8300000, guid: bd905134ff4a5ce4cbc4418d57513dbc, type: 3}
 --- !u!114 &1063760205
@@ -4791,11 +4767,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a0045b18dfa4e4a8411666942ef7d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 10
   hp: 2
   speed: 10
   bulletPrefab: {fileID: 2774900118778142202, guid: ffa7887837b6a0f4fac5edaa28606e66, type: 3}
-  fireRate: 0.2
   i: 0
   clip: {fileID: 8300000, guid: bd905134ff4a5ce4cbc4418d57513dbc, type: 3}
 --- !u!114 &1133210885
@@ -4977,11 +4951,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a0045b18dfa4e4a8411666942ef7d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 10
   hp: 2
   speed: 10
   bulletPrefab: {fileID: 0}
-  fireRate: 0.2
   i: 0
   clip: {fileID: 0}
 --- !u!114 &1142623487
@@ -5373,6 +5345,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1328899210}
   - component: {fileID: 1328899209}
+  - component: {fileID: 1328899211}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: Untagged
@@ -5392,6 +5365,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edbaa22e87910f04bac048ba241fa4a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bgsound: {fileID: 1328899211}
+  bglist: []
 --- !u!4 &1328899210
 Transform:
   m_ObjectHideFlags: 0
@@ -5406,6 +5381,102 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1328899211
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328899208}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1402424855
 GameObject:
   m_ObjectHideFlags: 0
@@ -5562,11 +5633,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a0045b18dfa4e4a8411666942ef7d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 10
   hp: 2
   speed: 10
   bulletPrefab: {fileID: 2774900118778142202, guid: ffa7887837b6a0f4fac5edaa28606e66, type: 3}
-  fireRate: 0.2
   i: 0
   clip: {fileID: 8300000, guid: bd905134ff4a5ce4cbc4418d57513dbc, type: 3}
 --- !u!114 &1421392264
@@ -5813,11 +5882,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a0045b18dfa4e4a8411666942ef7d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 10
   hp: 2
   speed: 10
   bulletPrefab: {fileID: 2774900118778142202, guid: ffa7887837b6a0f4fac5edaa28606e66, type: 3}
-  fireRate: 0.2
   i: 1
   clip: {fileID: 8300000, guid: bd905134ff4a5ce4cbc4418d57513dbc, type: 3}
 --- !u!114 &1430788901
@@ -6031,11 +6098,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a0045b18dfa4e4a8411666942ef7d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 10
   hp: 2
   speed: 10
   bulletPrefab: {fileID: 0}
-  fireRate: 0.2
   i: 0
   clip: {fileID: 0}
 --- !u!114 &1442868925
@@ -6472,11 +6537,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a0045b18dfa4e4a8411666942ef7d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 10
   hp: 2
   speed: 10
   bulletPrefab: {fileID: 2774900118778142202, guid: ffa7887837b6a0f4fac5edaa28606e66, type: 3}
-  fireRate: 0.2
   i: 1
   clip: {fileID: 8300000, guid: bd905134ff4a5ce4cbc4418d57513dbc, type: 3}
 --- !u!50 &1477816291
@@ -6560,11 +6623,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a0045b18dfa4e4a8411666942ef7d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 10
   hp: 2
   speed: 10
   bulletPrefab: {fileID: 0}
-  fireRate: 0.2
   i: 0
   clip: {fileID: 0}
 --- !u!114 &1527765235
@@ -6745,11 +6806,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a0045b18dfa4e4a8411666942ef7d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 10
   hp: 2
   speed: 10
   bulletPrefab: {fileID: 0}
-  fireRate: 0.2
   i: 0
   clip: {fileID: 0}
 --- !u!114 &1547974714
@@ -7434,11 +7493,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a0045b18dfa4e4a8411666942ef7d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 10
   hp: 2
   speed: 10
   bulletPrefab: {fileID: 2774900118778142202, guid: ffa7887837b6a0f4fac5edaa28606e66, type: 3}
-  fireRate: 0.2
   i: 0
   clip: {fileID: 8300000, guid: bd905134ff4a5ce4cbc4418d57513dbc, type: 3}
 --- !u!95 &1922571723
