@@ -182,6 +182,17 @@ public class Player : MonoBehaviour
             barrierDestroy();
             ObjectPool.Instance.ReturnObject(PoolObjectType.bullet_Type2, collision.gameObject);
         }
+        else if (collision.CompareTag("bullet_Type3"))
+        {
+            barrierDestroy();
+            ObjectPool.Instance.ReturnObject(PoolObjectType.bullet_Type3, collision.gameObject);
+        }
+        else if (collision.CompareTag("Bullet"))
+        {
+            barrierDestroy();
+            ObjectPool.Instance.ReturnObject(PoolObjectType.Bullet, collision.gameObject);
+        }
+
     }
 
     public void barrierDestroy() //충돌시 배리어 까이는 거

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5092191008367901323}
   m_Layer: 0
   m_Name: shield_0
-  m_TagString: bullet_Type2
+  m_TagString: bullet_Type3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

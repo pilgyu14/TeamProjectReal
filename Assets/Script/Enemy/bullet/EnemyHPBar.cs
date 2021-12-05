@@ -15,9 +15,9 @@ public class EnemyHPBar : MonoBehaviour
     private Slider BackHPSlider;
     private bool backHphit = false;
 
-    public float currentHP = 400f;
+    public float currentHP = 200f;
     [SerializeField]
-    private float MaxHP = 400f;
+    private float MaxHP = 200f;
 
     void Start()
     {
@@ -57,6 +57,5 @@ public class EnemyHPBar : MonoBehaviour
         BackHPSlider.gameObject.SetActive(false);
         gameObject.SetActive(false);
         HPSlider.value = 1f;
-        HPSlider.value = 1f; 
     }
 }
