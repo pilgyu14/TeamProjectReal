@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoSingleton<GameManager>
 {
+    public bool isStageClear = false;
+
     public Player player;
 
     //public Player player
@@ -41,6 +44,15 @@ public class GameManager : MonoSingleton<GameManager>
         DontDestroyOnLoad(gameObject);
         player = FindObjectOfType<Player>();
     }
+
+    private void OnSceneLoaded()
+    {
+        DontDestroyOnLoad(gameObject);
+        player = FindObjectOfType<Player>();
+    }
+
+
+
 
     private void FixedUpdate()
     {

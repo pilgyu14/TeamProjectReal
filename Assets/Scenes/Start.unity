@@ -802,7 +802,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: e3333e30166fe0b4ab6ce24fb91253a3, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -1497,7 +1497,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2d90a019d18664c4497a12420dbfa4e2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dd186722659c5c746b18fc6bbbcdd700, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

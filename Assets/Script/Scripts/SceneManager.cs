@@ -25,7 +25,11 @@ public class Scenemanager : MonoBehaviour
 
     public void Restart()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Main");
+        
+        if (GameManager.Instance.isStageClear)
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Main");
+        else
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Enemy");
     }
 
     public void Quit()
