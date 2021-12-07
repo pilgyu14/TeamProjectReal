@@ -461,6 +461,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settingImage: {fileID: 0}
   helpImage: {fileID: 0}
+  clip: {fileID: 8300000, guid: 6289d9d97f1b703489410f4c4df9663c, type: 3}
 --- !u!4 &1636917108
 Transform:
   m_ObjectHideFlags: 0

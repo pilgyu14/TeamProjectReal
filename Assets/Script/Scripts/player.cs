@@ -28,6 +28,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject wing;
 
+    [Header("효과음")]
+    public AudioClip clip;
+
     enum BulletType
     {
         basicBullet,
@@ -138,6 +141,7 @@ public class Player : MonoBehaviour
             return;
         if (Input.GetKey(KeyCode.Space))
         {
+            SoundManager.instance.SFXPlay("Shoot", clip);
             switch (bulletType)
             {
                 case BulletType.basicBullet:

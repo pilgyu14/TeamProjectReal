@@ -6855,6 +6855,7 @@ MonoBehaviour:
   bulletcnt: 1
   skillBarrier: {fileID: 0}
   wing: {fileID: 0}
+  clip: {fileID: 8300000, guid: ef03493189039544a9d78ed4245730af, type: 3}
 --- !u!50 &1077498681
 Rigidbody2D:
   serializedVersion: 4

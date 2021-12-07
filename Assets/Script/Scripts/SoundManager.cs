@@ -11,7 +11,8 @@ public class SoundManager : MonoBehaviour
     public static SoundManager instance;
     private void Awake()
     {
-        if(instance==null)
+        DontDestroyOnLoad(gameObject);
+        if (instance==null)
         {
             instance = this;
             DontDestroyOnLoad(instance);
@@ -37,8 +38,8 @@ public class SoundManager : MonoBehaviour
         GameObject go = new GameObject(sfxName + "Sound");
         AudioSource audioSource = go.AddComponent<AudioSource>();
         audioSource.clip = clip;
+        audioSource.volume = 0.3f;
         audioSource.Play();
-
         Destroy(go, clip.length);
     }
 
