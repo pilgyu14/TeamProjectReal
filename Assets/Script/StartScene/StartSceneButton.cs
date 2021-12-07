@@ -43,6 +43,11 @@ public class StartSceneButton : MonoBehaviour
         }
     }
 
+    public void OnClickDefault()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Start");
+    }
+
     public void OnClickExit()
     {
 #if UNITY_EDITOR

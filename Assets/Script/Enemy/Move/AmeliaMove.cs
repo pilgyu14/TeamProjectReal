@@ -24,6 +24,7 @@ public class AmeliaMove : MonoBehaviour
 
     private void LoadMain()
     {
+        GameManager.Instance.isStageClear = true;
         UnityEngine.SceneManagement.SceneManager.LoadScene("Main");
     }
 }

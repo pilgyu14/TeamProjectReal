@@ -5,7 +5,7 @@ using DG.Tweening;
 
 public class Boss2 : MonoBehaviour
 {   [SerializeField]
-    private float hp = 100f;
+    private float hp = 200f;
     [SerializeField]
     private float speed = 5f;
     Vector3 basicPos = new Vector3(-3.19f, 2.35f);
@@ -434,7 +434,7 @@ public class Boss2 : MonoBehaviour
     {
        
         float delay = 0.5f;
-        int loopsCount = 6; 
+        int loopsCount = 4; 
         curMovePatternCount++;
         Debug.Log("ÁÂ¿ì ½ÇÇà" + curMovePatternCount);
 

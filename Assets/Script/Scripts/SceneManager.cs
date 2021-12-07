@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class SceneManager : MonoBehaviour
+public class Scenemanager : MonoBehaviour
 {
     [SerializeField]
     private GameObject Emilia;
@@ -25,7 +25,11 @@ public class SceneManager : MonoBehaviour
 
     public void Restart()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Main");
+        
+        if (GameManager.Instance.isStageClear)
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Main");
+        else
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Enemy");
     }
 
     public void Quit()
