@@ -27,7 +27,7 @@ public class EnemyShooting : MonoBehaviour
     private SpriteRenderer spriteRenderer = null;
 
     private bool isDamaged = false;
-    private bool isDead = false;
+    public bool isDead = false;
 
     public AudioClip clip;
 
@@ -91,18 +91,20 @@ public class EnemyShooting : MonoBehaviour
         spriteRenderer.material.SetColor("_Color", new Color(0f, 0f, 0f, 0f));
         col.enabled = false;
         SoundManager.instance.SFXPlay("Dead", clip);
-        // Æø¹ß "¸¸µé¾îÁà"
-        yield return new WaitForSeconds(0.5f);
+        // Æø¹ß "¸¸µé¾îÁà" ±×·¡
+        spriteRenderer.material.SetColor("_Color", new Color(1f, 1f, 1f, 1f));
+        animator.SetBool("isDead", true);
+        yield return new WaitForSeconds(2f);
         Destroy(gameObject);
     }
 
     public IEnumerator Shooting()
     {
-        //if (isDead == false) yield break;
         diff = GameManager.Instance.player.transform.position - transform.position;
         diff.Normalize();
         for (i = 0; i < 3; i++)
         {
+            if (isDead) yield break;
             //newBullet = Instantiate(bulletPrefab, transform);
             newBullet = ObjectPool.Instance.GetObject(PoolObjectType.Bullet);
             newBullet.transform.position = transform.position;

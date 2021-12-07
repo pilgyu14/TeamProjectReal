@@ -361,7 +361,7 @@ MonoBehaviour:
     - {fileID: 9073620960736497277, guid: 3b4ad54d0be031249aaf0f771eca70c6, type: 3}
     - {fileID: 2774900118778142202, guid: 3f8571b75f3bfa541bca0c0eaa40eecc, type: 3}
     - {fileID: 2774900118778142202, guid: 3f8571b75f3bfa541bca0c0eaa40eecc, type: 3}
-    prefabCreateCounts: 000000002c0100002003000000000000640000006400000000000000
+    prefabCreateCounts: 000000002c010000e803000000000000640000006400000064000000
 --- !u!4 &126022790
 Transform:
   m_ObjectHideFlags: 0
@@ -5305,7 +5305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 920d18872f3dcd447b5c86d0a0fdba1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
+  hp: 150
   speed: 5
   bulletSpeed: 10
   player: {fileID: 695430079}

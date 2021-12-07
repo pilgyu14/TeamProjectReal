@@ -970,6 +970,7 @@ MonoBehaviour:
   speed: 10
   bulletPrefab: {fileID: 2774900118778142202, guid: ffa7887837b6a0f4fac5edaa28606e66, type: 3}
   i: 2
+  isDead: 0
   clip: {fileID: 8300000, guid: bd905134ff4a5ce4cbc4418d57513dbc, type: 3}
 --- !u!50 &106213509
 Rigidbody2D:
@@ -1526,6 +1527,7 @@ MonoBehaviour:
   speed: 10
   bulletPrefab: {fileID: 2774900118778142202, guid: ffa7887837b6a0f4fac5edaa28606e66, type: 3}
   i: 0
+  isDead: 0
   clip: {fileID: 8300000, guid: bd905134ff4a5ce4cbc4418d57513dbc, type: 3}
 --- !u!114 &255760754
 MonoBehaviour:
@@ -2161,6 +2163,7 @@ MonoBehaviour:
   speed: 10
   bulletPrefab: {fileID: 2774900118778142202, guid: ffa7887837b6a0f4fac5edaa28606e66, type: 3}
   i: 0
+  isDead: 0
   clip: {fileID: 8300000, guid: bd905134ff4a5ce4cbc4418d57513dbc, type: 3}
 --- !u!114 &387626436
 MonoBehaviour:
@@ -2533,6 +2536,7 @@ MonoBehaviour:
   speed: 10
   bulletPrefab: {fileID: 2774900118778142202, guid: ffa7887837b6a0f4fac5edaa28606e66, type: 3}
   i: 1
+  isDead: 0
   clip: {fileID: 8300000, guid: bd905134ff4a5ce4cbc4418d57513dbc, type: 3}
 --- !u!95 &429412485
 Animator:
@@ -2847,6 +2851,7 @@ MonoBehaviour:
   speed: 10
   bulletPrefab: {fileID: 2774900118778142202, guid: ffa7887837b6a0f4fac5edaa28606e66, type: 3}
   i: 2
+  isDead: 0
   clip: {fileID: 8300000, guid: bd905134ff4a5ce4cbc4418d57513dbc, type: 3}
 --- !u!114 &492475146
 MonoBehaviour:
@@ -3157,6 +3162,7 @@ MonoBehaviour:
   speed: 10
   bulletPrefab: {fileID: 2774900118778142202, guid: ffa7887837b6a0f4fac5edaa28606e66, type: 3}
   i: 0
+  isDead: 0
   clip: {fileID: 8300000, guid: bd905134ff4a5ce4cbc4418d57513dbc, type: 3}
 --- !u!114 &511245840
 MonoBehaviour:
@@ -3477,6 +3483,7 @@ MonoBehaviour:
   speed: 10
   bulletPrefab: {fileID: 2774900118778142202, guid: ffa7887837b6a0f4fac5edaa28606e66, type: 3}
   i: 1
+  isDead: 0
   clip: {fileID: 8300000, guid: bd905134ff4a5ce4cbc4418d57513dbc, type: 3}
 --- !u!95 &517519529
 Animator:
@@ -3722,6 +3729,7 @@ MonoBehaviour:
   speed: 10
   bulletPrefab: {fileID: 2774900118778142202, guid: ffa7887837b6a0f4fac5edaa28606e66, type: 3}
   i: 1
+  isDead: 0
   clip: {fileID: 8300000, guid: bd905134ff4a5ce4cbc4418d57513dbc, type: 3}
 --- !u!114 &571327441
 MonoBehaviour:
@@ -4222,11 +4230,11 @@ GameObject:
   m_Component:
   - component: {fileID: 730397583}
   - component: {fileID: 730397582}
-  - component: {fileID: 730397581}
   - component: {fileID: 730397580}
   - component: {fileID: 730397584}
   - component: {fileID: 730397586}
   - component: {fileID: 730397585}
+  - component: {fileID: 730397581}
   m_Layer: 0
   m_Name: Left_A_1
   m_TagString: Enemy
@@ -4348,6 +4356,7 @@ MonoBehaviour:
   speed: 10
   bulletPrefab: {fileID: 2774900118778142202, guid: ffa7887837b6a0f4fac5edaa28606e66, type: 3}
   i: 0
+  isDead: 0
   clip: {fileID: 8300000, guid: bd905134ff4a5ce4cbc4418d57513dbc, type: 3}
 --- !u!50 &730397585
 Rigidbody2D:
@@ -4867,6 +4876,7 @@ MonoBehaviour:
   speed: 10
   bulletPrefab: {fileID: 2774900118778142202, guid: ffa7887837b6a0f4fac5edaa28606e66, type: 3}
   i: 2
+  isDead: 0
   clip: {fileID: 8300000, guid: bd905134ff4a5ce4cbc4418d57513dbc, type: 3}
 --- !u!95 &792779125
 Animator:
@@ -5084,6 +5094,7 @@ MonoBehaviour:
   speed: 10
   bulletPrefab: {fileID: 2774900118778142202, guid: ffa7887837b6a0f4fac5edaa28606e66, type: 3}
   i: 2
+  isDead: 0
   clip: {fileID: 8300000, guid: bd905134ff4a5ce4cbc4418d57513dbc, type: 3}
 --- !u!114 &795106927
 MonoBehaviour:
@@ -6026,6 +6037,7 @@ MonoBehaviour:
   speed: 10
   bulletPrefab: {fileID: 2774900118778142202, guid: ffa7887837b6a0f4fac5edaa28606e66, type: 3}
   i: 1
+  isDead: 0
   clip: {fileID: 8300000, guid: bd905134ff4a5ce4cbc4418d57513dbc, type: 3}
 --- !u!114 &946188892
 MonoBehaviour:
@@ -6708,6 +6720,7 @@ MonoBehaviour:
   speed: 10
   bulletPrefab: {fileID: 2774900118778142202, guid: ffa7887837b6a0f4fac5edaa28606e66, type: 3}
   i: 2
+  isDead: 0
   clip: {fileID: 8300000, guid: bd905134ff4a5ce4cbc4418d57513dbc, type: 3}
 --- !u!114 &1063760205
 MonoBehaviour:
@@ -6999,6 +7012,7 @@ MonoBehaviour:
   speed: 10
   bulletPrefab: {fileID: 2774900118778142202, guid: ffa7887837b6a0f4fac5edaa28606e66, type: 3}
   i: 0
+  isDead: 0
   clip: {fileID: 8300000, guid: bd905134ff4a5ce4cbc4418d57513dbc, type: 3}
 --- !u!114 &1133210885
 MonoBehaviour:
@@ -7183,6 +7197,7 @@ MonoBehaviour:
   speed: 10
   bulletPrefab: {fileID: 2774900118778142202, guid: ffa7887837b6a0f4fac5edaa28606e66, type: 3}
   i: 0
+  isDead: 0
   clip: {fileID: 8300000, guid: bd905134ff4a5ce4cbc4418d57513dbc, type: 3}
 --- !u!114 &1142623487
 MonoBehaviour:
@@ -8251,6 +8266,7 @@ MonoBehaviour:
   speed: 10
   bulletPrefab: {fileID: 2774900118778142202, guid: ffa7887837b6a0f4fac5edaa28606e66, type: 3}
   i: 0
+  isDead: 0
   clip: {fileID: 8300000, guid: bd905134ff4a5ce4cbc4418d57513dbc, type: 3}
 --- !u!114 &1421392264
 MonoBehaviour:
@@ -8500,6 +8516,7 @@ MonoBehaviour:
   speed: 10
   bulletPrefab: {fileID: 2774900118778142202, guid: ffa7887837b6a0f4fac5edaa28606e66, type: 3}
   i: 1
+  isDead: 0
   clip: {fileID: 8300000, guid: bd905134ff4a5ce4cbc4418d57513dbc, type: 3}
 --- !u!114 &1430788901
 MonoBehaviour:
@@ -8716,6 +8733,7 @@ MonoBehaviour:
   speed: 10
   bulletPrefab: {fileID: 2774900118778142202, guid: ffa7887837b6a0f4fac5edaa28606e66, type: 3}
   i: 0
+  isDead: 0
   clip: {fileID: 8300000, guid: bd905134ff4a5ce4cbc4418d57513dbc, type: 3}
 --- !u!114 &1442868925
 MonoBehaviour:
@@ -9150,6 +9168,7 @@ MonoBehaviour:
   speed: 10
   bulletPrefab: {fileID: 2774900118778142202, guid: ffa7887837b6a0f4fac5edaa28606e66, type: 3}
   i: 1
+  isDead: 0
   clip: {fileID: 8300000, guid: bd905134ff4a5ce4cbc4418d57513dbc, type: 3}
 --- !u!50 &1477816291
 Rigidbody2D:
@@ -9467,6 +9486,7 @@ MonoBehaviour:
   speed: 10
   bulletPrefab: {fileID: 2774900118778142202, guid: ffa7887837b6a0f4fac5edaa28606e66, type: 3}
   i: 0
+  isDead: 0
   clip: {fileID: 8300000, guid: bd905134ff4a5ce4cbc4418d57513dbc, type: 3}
 --- !u!114 &1527765235
 MonoBehaviour:
@@ -9726,6 +9746,7 @@ MonoBehaviour:
   speed: 10
   bulletPrefab: {fileID: 2774900118778142202, guid: ffa7887837b6a0f4fac5edaa28606e66, type: 3}
   i: 0
+  isDead: 0
   clip: {fileID: 8300000, guid: bd905134ff4a5ce4cbc4418d57513dbc, type: 3}
 --- !u!114 &1547974714
 MonoBehaviour:
@@ -10800,6 +10821,7 @@ MonoBehaviour:
   speed: 10
   bulletPrefab: {fileID: 2774900118778142202, guid: ffa7887837b6a0f4fac5edaa28606e66, type: 3}
   i: 0
+  isDead: 0
   clip: {fileID: 8300000, guid: bd905134ff4a5ce4cbc4418d57513dbc, type: 3}
 --- !u!95 &1922571723
 Animator:
