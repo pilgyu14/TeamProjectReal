@@ -12,9 +12,9 @@ public class BombSkill : MonoBehaviour
     //½ºÅ³ ÄðÅ¸ÀÓ
     [SerializeField]
     private Image coolTime;
-    [SerializeField] private Text coolTimeText; 
+    [SerializeField] private Text coolTimeText;
     private float timeCount = 0f;
-    private float maxTime = 45f; 
+    private float maxTime = 45f;
     private float minusCount = 1f;
     private bool IsCoolTime = false;
 
@@ -34,7 +34,7 @@ public class BombSkill : MonoBehaviour
             if (IsCoolTime == true) return;
             Explossion();
             timeCount = maxTime;
-            IsCoolTime = true; 
+            IsCoolTime = true;
             Debug.Log("2");
         }
         if (IsCoolTime)
@@ -79,7 +79,7 @@ public class BombSkill : MonoBehaviour
         else if (collision.tag == "bullet_Type2")
             ObjectPool.Instance.ReturnObject(PoolObjectType.bullet_Type2, collision.gameObject);
         else if (collision.tag == "bullet_Type3")
-            ObjectPool.Instance.ReturnObject(PoolObjectType.bullet_Type1, collision.gameObject);
+            ObjectPool.Instance.ReturnObject(PoolObjectType.bullet_Type3, collision.gameObject);
         else if (collision.tag == "Bullet")
             ObjectPool.Instance.ReturnObject(PoolObjectType.Bullet, collision.gameObject);
     }

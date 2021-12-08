@@ -17,6 +17,7 @@ public class StraightDiagonal : MonoBehaviour
 
     void Update()
     {
+        
         CheckLimit();
         if (transform.position.y < 6)
         {

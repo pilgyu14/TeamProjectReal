@@ -744,7 +744,7 @@ MonoBehaviour:
     - {fileID: 9073620960736497277, guid: 3b4ad54d0be031249aaf0f771eca70c6, type: 3}
     - {fileID: 2774900118778142202, guid: 3f8571b75f3bfa541bca0c0eaa40eecc, type: 3}
     - {fileID: 2774900118778142202, guid: 3f8571b75f3bfa541bca0c0eaa40eecc, type: 3}
-    prefabCreateCounts: c800000000000000000000000000000000000000c800000000000000
+    prefabCreateCounts: c800000000000000f40100000000000000000000c800000000000000
 --- !u!4 &87406300
 Transform:
   m_ObjectHideFlags: 0
@@ -6869,6 +6869,7 @@ MonoBehaviour:
   skillBarrier: {fileID: 0}
   wing: {fileID: 0}
   clip: {fileID: 8300000, guid: ef03493189039544a9d78ed4245730af, type: 3}
+  hitPlayer: {fileID: 8300000, guid: f14fb89810eb7414fb0e8d3e2189e850, type: 3}
 --- !u!50 &1077498681
 Rigidbody2D:
   serializedVersion: 4
@@ -10188,7 +10189,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1723905294}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.1, y: 80, z: 0}
+  m_LocalPosition: {x: -3.19, y: 80, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}

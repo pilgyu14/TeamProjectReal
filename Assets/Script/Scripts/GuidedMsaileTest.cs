@@ -6,7 +6,7 @@ public class GuidedMsaileTest : MonoBehaviour
 {
 
     float rotateSpeed = 500f;
-    float moveSpeed = 3f; 
+    float moveSpeed = 3f;
     private Transform targetTrs;
     private float distance;
     Rigidbody2D rigid;
@@ -21,22 +21,24 @@ public class GuidedMsaileTest : MonoBehaviour
 
     private void OnEnable()
     {
-        IsTargetting = false; 
+        IsTargetting = false;
+        isTrack = true;
+        time = 0f;
     }
     void Start()
     {
         targetTrs = FindObjectOfType<Player>().transform;
-        rigid = GetComponent<Rigidbody2D>(); 
-     }
+        rigid = GetComponent<Rigidbody2D>();
+    }
 
-                                                                            
+
     void Update()
     {
-        check(); 
+        check();
         if (IsTargetting)
         {
-             target();
-             Move();
+            target();
+            Move();
         }
         else
             MovePoint();
@@ -52,10 +54,10 @@ public class GuidedMsaileTest : MonoBehaviour
             IsTargetting = true;
             moveSpeed = Random.Range(3f, 8f);
         }
-     }
+    }
     void target()
     {
-        if (isTrack == false) return; 
+        if (isTrack == false) return;
         Vector3 myPos = transform.position;
         Vector3 targetPos = targetTrs.position;
 
@@ -65,12 +67,12 @@ public class GuidedMsaileTest : MonoBehaviour
 
         distance = (targetPos - myPos).sqrMagnitude;
         //Debug.Log(distance);
-        if (distance < endDistance) { Debug.Log("眠利 场"); isTrack = false;  } 
+        if (distance < endDistance) { Debug.Log("眠利 场"); isTrack = false; }
         Vector3 quaternionToTarget = vectorToTarget;
 
         Quaternion targetRotation = Quaternion.LookRotation(forward: Vector3.forward, upwards: vectorToTarget);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotateSpeed * Time.deltaTime);
-        
+
     }
     private void Move()
     {

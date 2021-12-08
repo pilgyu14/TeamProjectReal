@@ -32,6 +32,7 @@ public class ObjectPool : MonoBehaviour
     private GameObject CreateNewObject(int index)
     {
         var newObj = Instantiate(objectPoolData.prefabs[index]);
+        newObj.name = objectPoolData.prefabs[index].name;
         newObj.gameObject.SetActive(false);
         newObj.transform.SetParent(transform);
         return newObj;

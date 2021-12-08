@@ -30,6 +30,7 @@ public class Player : MonoBehaviour
 
     [Header("효과음")]
     public AudioClip clip;
+    public AudioClip hitPlayer;
 
     enum BulletType
     {
@@ -53,8 +54,9 @@ public class Player : MonoBehaviour
         Move();
         Reload();
         Fire();
-        if (Input.GetKeyDown(KeyCode.Q))
-            EmiliaSkill();
+        
+        /*if (Input.GetKeyDown(KeyCode.Q))
+            EmiliaSkill();*/
     }
     void CheckPos()
     {
@@ -209,6 +211,7 @@ public class Player : MonoBehaviour
             UnityEngine.SceneManagement.SceneManager.LoadScene("Dead");
             return;
         }
+        SoundManager.instance.SFXPlay("Hit", hitPlayer);
         barrier[barrierCount - 1].SetActive(false);
         barrierUI[barrierCount - 1].SetActive(false);
         barrierCount--;

@@ -15,9 +15,9 @@ public class EnemyHPBar : MonoBehaviour
     private Slider BackHPSlider;
     private bool backHphit = false;
 
-    public float currentHP = 200f;
+    public float currentHP = 150f;
     [SerializeField]
-    private float MaxHP = 200f;
+    private float MaxHP = 150f;
 
     void Start()
     {

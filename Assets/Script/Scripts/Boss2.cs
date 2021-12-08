@@ -4,7 +4,8 @@ using UnityEngine;
 using DG.Tweening;
 
 public class Boss2 : MonoBehaviour
-{   [SerializeField]
+{
+    [SerializeField]
     private float hp = 200f;
     [SerializeField]
     private float speed = 5f;
@@ -31,15 +32,15 @@ public class Boss2 : MonoBehaviour
     List<GameObject> bullets = new List<GameObject>();
     //패턴
     public int patternIndex = -1;
-    public int movePatternIndex; 
+    public int movePatternIndex;
     public int curPatternCount;
     public int curMovePatternCount;
     [Header("패턴 횟수 제한")]
     public int[] maxPatternCount;
-    public int[] maxMovePatternCount; 
+    public int[] maxMovePatternCount;
     int thinkCount = 0;
     List<int> availableNum = new List<int>();
-    List<int> availableMoveNum = new List<int>(); 
+    List<int> availableMoveNum = new List<int>();
 
     //하트 모양 발사
     float[] speeds = new float[34]; // 모양 만들기 위해 총알 마다 다른 속도 
@@ -63,7 +64,7 @@ public class Boss2 : MonoBehaviour
         LeftRightMove,
         Teleportation
     }
-    
+
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
@@ -75,10 +76,10 @@ public class Boss2 : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))    
-            Missile(); 
+        if (Input.GetKeyDown(KeyCode.K))
+            Missile();
     }
-    void availableNumInit() 
+    void availableNumInit()
     {
         for (int i = 0; i < maxPatternCount.Length; i++)
         {
@@ -99,7 +100,7 @@ public class Boss2 : MonoBehaviour
         for (int i = 0; i < maxPatternCount.Length; i++)
         {
             maxPatternCount[i] = Random.Range(1, 4);
-            if(maxPatternCount[i] == (int)BossPatterns.aroundOneShot)
+            if (i == (int)BossPatterns.aroundOneShot)
                 maxPatternCount[i] = Random.Range(1, 3);
         }
     }
@@ -109,14 +110,14 @@ public class Boss2 : MonoBehaviour
         SetColor();
         if (hp <= 0)
         {
-            //ObjectPool.Instance.ReturnObject()
+            ReturnEnemyBullet();
             enemyCanvasGo.GetComponent<EnemyHPBar>().Init();
         }
     }
     public void think()
     {
         Debug.Log("띵크");
-   
+
         if (availableNum.Count == 0)
         {
             Debug.Log("리스트초기화");
@@ -125,70 +126,69 @@ public class Boss2 : MonoBehaviour
             RandomMaxPatternCount();
         }
 
-        if(availableMoveNum.Count == 0)
+        if (availableMoveNum.Count == 0)
         {
-            availableMoveNumInit(); 
+            availableMoveNumInit();
         }
 
         curPatternCount = 0;
-        thinkCount++; 
+        thinkCount++;
         patternIndex = Random.Range(0, availableNum.Count);
-        
+
         Debug.Log($"패턴인덱스 {patternIndex} ");
         Debug.Log("문제" + availableNum[patternIndex]);
 
         Debug.Log("패턴뭐할지생각");
-    
-            switch (availableNum[patternIndex])
-            {
-                case (int) BossPatterns.HeartShot:
-                    {
-                        HeartShot(); 
-                        break;
-                    }
-                case (int)BossPatterns.Missile:
-                    {
-                        Missile();
-                        break;
-                    }
-                case (int)BossPatterns.aroundOneShot:
-                    {
-                        StartCoroutine(aroundOneShot());
-                        break;
-                    }
-                case (int)BossPatterns.CircleToTarget:
-                    {
-                        CircleToTarget(); 
-                        break;
-                    }
-            }
 
-        if (IsMoving)
+        switch (availableNum[patternIndex])
         {
-            if (thinkCount % 2 == 0)
-            {
-                curMovePatternCount = 0;
-                Debug.Log("무브 생각중");
-                movePatternIndex = Random.Range(0, availableMoveNum.Count);
-                Debug.Log("무브패턴인데스"+ movePatternIndex);
-                switch (availableMoveNum[movePatternIndex])
+            case (int)BossPatterns.HeartShot:
                 {
-                    case (int)MovePatterns.LeftRightMove:
-                        {
-                            Debug.Log("좌우");
-                            IsMoving = false;
-                            LeftRightMove();
-                            break;
-                        }
-                    case (int)MovePatterns.Teleportation:
-                        {
-                            Debug.Log("텔포");
-                            IsMoving = false;
-                            Teleportation();
-                            break;
-                        }
+                    //HeartShot();
+                    HeartShot();
+                    break;
                 }
-               
+            case (int)BossPatterns.Missile:
+                {
+                    CircleToTarget();
+
+                    break;
+                }
+            case (int)BossPatterns.aroundOneShot:
+                {
+                    StartCoroutine(aroundOneShot());
+                    break;
+                }
+            case (int)BossPatterns.CircleToTarget:
+                {
+                    Missile();
+                    break;
+                }
+        }
+
+        if (IsMoving && thinkCount % 2 == 0)
+        {
+            curMovePatternCount = 0;
+            Debug.Log("무브 생각중");
+            movePatternIndex = Random.Range(0, availableMoveNum.Count);
+            Debug.Log("무브패턴인데스" + movePatternIndex);
+            switch (availableMoveNum[movePatternIndex])
+            {
+                case (int)MovePatterns.LeftRightMove:
+                    {
+                        Debug.Log("좌우");
+                        IsMoving = false;
+                        LeftRightMove();
+                        break;
+                    }
+                case (int)MovePatterns.Teleportation:
+                    {
+                        Debug.Log("텔포");
+                        IsMoving = false;
+                        Teleportation();
+                        break;
+                    }
+
             }
 
         }
@@ -205,9 +205,9 @@ public class Boss2 : MonoBehaviour
             GameObject bullet;
             float radian = Mathf.Rad2Deg * i / shotCount;
             bullet = ObjectPool.Instance.GetObject(PoolObjectType.bullet_Type0);//(Bullet, trans);
-            bullets.Add(bullet);
-            //bullet.transform.SetParent(transform, true);
-            bullet.transform.SetParent(null);
+                                                                                //  bullets.Add(bullet);
+                                                                                //bullet.transform.SetParent(transform, true);
+                                                                                //bullet.transform.SetParent(null);
             bullet.transform.position = transform.position;// 위치값 초기화
             bullet.transform.rotation = Quaternion.identity; //회전값 초기화  
 
@@ -241,30 +241,38 @@ public class Boss2 : MonoBehaviour
     void HeartShot()
     {
         Debug.Log("하트샷");
-        float delay = 1f; 
+        float delay = 1f;
         curPatternCount++;
 
         int angelChange = 360 / maxPatternCount[(int)BossPatterns.HeartShot];
 
-            //34개의 게임오브젝트 생성
-            for (int i = 0; i < 34; i += 1)
+        //34개의 게임오브젝트 생성
+        for (int i = 0; i < 34; i++)
+        {
+            //오브젝트 생성
+            GameObject bullet = ObjectPool.Instance.GetObject(PoolObjectType.bullet_Type1);
+
+            //    bullets.Add(bullet);
+            //bullet.transform.SetParent(null);
+            //총알 생성 위치를 (0,0) 좌표로 한다.
+            bullet.transform.position = transform.position;
+
+            //정밀한 회전 처리로 모양을 만들어 낸다.
+            bullet.transform.rotation = Quaternion.Euler(0, 0, dir[i] + rot);
+
+            if (bullet.GetComponent<EnemyBulletTriangle>() == null)
             {
-                //오브젝트 생성
-                GameObject bullet = ObjectPool.Instance.GetObject(PoolObjectType.bullet_Type1);
-
-                bullets.Add(bullet);
-            bullet.transform.SetParent(null);
-                //총알 생성 위치를 (0,0) 좌표로 한다.
-                bullet.transform.position = transform.position;
-
-                //정밀한 회전 처리로 모양을 만들어 낸다.
-                bullet.transform.rotation = Quaternion.Euler(0, 0, dir[i] + rot);
-                
-                //정밀한 속도 처리로 모양을 만들어 낸다.
-                bullet.GetComponent<EnemyBulletTriangle>().speed = speeds[i] / 50;
+                Debug.LogError("널레퍼런스");
+                Debug.LogError(bullet.name);
+                i--;
+                ObjectPool.Instance.ReturnObject(PoolObjectType.bullet_Type3, bullet);
+                continue;
             }
-            rot += angelChange;
-        
+            //정밀한 속도 처리로 모양을 만들어 낸다.
+            bullet.GetComponent<EnemyBulletTriangle>().speed = speeds[i] * 0.02f;
+        }
+        rot += angelChange;
+
 
         if (curPatternCount < maxPatternCount[availableNum[patternIndex]])
             Invoke(nameof(HeartShot), delay);
@@ -272,9 +280,9 @@ public class Boss2 : MonoBehaviour
         {
             Invoke(nameof(think), 1f);
             availableNum.RemoveAt(patternIndex);
-            rot = 0f; 
+            rot = 0f;
         }
-        }
+    }
 
     void Missile()
     {
@@ -295,14 +303,14 @@ public class Boss2 : MonoBehaviour
 
         if (curPatternCount < maxPatternCount[availableNum[patternIndex]])
         {
-            Invoke(nameof(Missile),delay);
+            Invoke(nameof(Missile), delay);
         }
         else
         {
             Invoke(nameof(think), 1f);
             availableNum.RemoveAt(patternIndex);
         }
-        }
+    }
 
     void CircleToTarget()
     {
@@ -320,8 +328,17 @@ public class Boss2 : MonoBehaviour
             radian = (i / count) * 360;
             GameObject bullet;
             bullet = ObjectPool.Instance.GetObject(PoolObjectType.bullet_Type1);
-            bullet.GetComponent<EnemyBulletTriangle>().speed = speed; 
-            bullets.Add(bullet);
+            if (bullet.GetComponent<EnemyBulletTriangle>() == null)
+            {
+                Debug.LogError("널레퍼런스");
+                Debug.LogError(bullet.name);
+                i--;
+                ObjectPool.Instance.ReturnObject(PoolObjectType.bullet_Type3, bullet);
+                continue;
+            }
+            bullet.GetComponent<EnemyBulletTriangle>().speed = speed;
+
+            //  bullets.Add(bullet);
 
             bullet.transform.position = transform.position;
             bullet.transform.rotation = Quaternion.Euler(0, 0, radian);
@@ -332,10 +349,10 @@ public class Boss2 : MonoBehaviour
         if (curPatternCount < maxPatternCount[availableNum[patternIndex]])
             Invoke(nameof(CircleToTarget), delay);
         else
-        { 
+        {
             Invoke(nameof(think), 1f);
-        availableNum.RemoveAt(patternIndex);
-         }
+            availableNum.RemoveAt(patternIndex);
+        }
     }
     IEnumerator BulletToTarget(List<GameObject> bulletsGo)
     {
@@ -351,7 +368,9 @@ public class Boss2 : MonoBehaviour
             direction = player.transform.position - bulletsGo[i].transform.position;
             angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             bulletsGo[i].transform.rotation = Quaternion.Euler(0, 0, angle);
-            bulletsGo[i].GetComponent<EnemyBulletTriangle>().speed = speed; 
+            bulletsGo[i].GetComponent<EnemyBulletTriangle>().speed = speed;
+            if (i == bulletsGo.Count - 1)
+                bulletsGo.Clear();
         }
     }
 
@@ -370,7 +389,7 @@ public class Boss2 : MonoBehaviour
             angle = i / count * 360;
             bullet = ObjectPool.Instance.GetObject(PoolObjectType.bullet_Type0);
             circleBullets.Add(bullet);
-            bullets.Add(bullet);
+            //        bullets.Add(bullet);
 
             bullet.transform.position = transform.position;
             bullet.transform.rotation = Quaternion.Euler(0, 0, angle);
@@ -390,12 +409,12 @@ public class Boss2 : MonoBehaviour
             availableNum.RemoveAt(patternIndex);
         }
 
-        }
+    }
     IEnumerator SmallCircleShot()
     {
         Vector2 direction;
         Rigidbody2D rigid;
-        float speed = Random.Range(50,100); ;
+        float speed = Random.Range(50, 100); ;
         float delay = 0.2f;
         for (int i = 0; i < circleBullets.Count; i++)
         {
@@ -411,7 +430,7 @@ public class Boss2 : MonoBehaviour
     Vector2 randomX;
     void Teleportation()
     {
-        float delay = 0.5f; 
+        float delay = 0.5f;
         curMovePatternCount++;
         Debug.Log("텔포 실행" + curMovePatternCount);
         randomX = new Vector2(Random.Range(GameManager.Instance.minPos.x, GameManager.Instance.maxPos.x), transform.position.y);
@@ -423,18 +442,18 @@ public class Boss2 : MonoBehaviour
             Invoke(nameof(Teleportation), delay);
         }
 
-        if (curMovePatternCount== maxMovePatternCount[movePatternIndex])
+        if (curMovePatternCount == maxMovePatternCount[movePatternIndex])
         {
-                transform.position = basicPos;
+            transform.position = basicPos;
             IsMoving = true;
             availableMoveNum.RemoveAt(movePatternIndex);
         }
     }
     private void LeftRightMove()
     {
-       
+
         float delay = 0.5f;
-        int loopsCount = 4; 
+        int loopsCount = 4;
         curMovePatternCount++;
         Debug.Log("좌우 실행" + curMovePatternCount);
 
@@ -449,13 +468,13 @@ public class Boss2 : MonoBehaviour
 
         //if (curMovePatternCount == maxMovePatternCount[movePatternIndex])
         //{
-            availableMoveNum.RemoveAt(movePatternIndex);
+        availableMoveNum.RemoveAt(movePatternIndex);
         //}
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-      //  Debug.Log("충돌됨");
+        //  Debug.Log("충돌됨");
         //Debug.Log(collision.name);
         if (collision.gameObject.CompareTag("playerBullet"))
         {
@@ -487,8 +506,17 @@ public class Boss2 : MonoBehaviour
                 case "bullet_Type1":
                     ObjectPool.Instance.ReturnObject(PoolObjectType.bullet_Type1, bullets[i]);
                     break;
+                case "bullet_Type2":
+                    ObjectPool.Instance.ReturnObject(PoolObjectType.bullet_Type2, bullets[i]);
+                    break;
+                case "bullet_Type3":
+                    ObjectPool.Instance.ReturnObject(PoolObjectType.bullet_Type3, bullets[i]);
+                    break;
             }
         }
+        bullets.Clear();
+        availableNum.Clear();
+        availableMoveNum.Clear();
     }
     private void HeartDataInit()
     {
@@ -563,5 +591,3 @@ public class Boss2 : MonoBehaviour
     }
 
 }
-
-

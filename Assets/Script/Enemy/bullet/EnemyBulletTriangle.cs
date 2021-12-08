@@ -6,9 +6,6 @@ public class EnemyBulletTriangle : MonoBehaviour
 {
     public float speed = 3f;
 
-    private void Start()
-    {
-    }
 
     void check()
     {
@@ -28,13 +25,3 @@ public class EnemyBulletTriangle : MonoBehaviour
         transform.Translate(Vector2.right * speed * Time.deltaTime, Space.Self);
     }
 }
-
-
-//    private void OnTriggerEnter2D(Collider2D collision)
-//    {
-//        if (collision.tag == "player")
-//            ObjectPool.Instance.ReturnObject(PoolObjectType.bullet_Type1, gameObject);
-
-
-//    }
-//}
