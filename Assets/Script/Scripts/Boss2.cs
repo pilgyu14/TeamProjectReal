@@ -490,7 +490,7 @@ public class Boss2 : MonoBehaviour
         Color color = spriteRenderer.color;
         color.a = 0.5f;
         spriteRenderer.color = color;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(delay);
         color.a = 1f;
         spriteRenderer.color = color;
     }

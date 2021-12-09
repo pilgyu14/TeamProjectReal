@@ -56,8 +56,8 @@ public class BasicBoss : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        RandomMaxPatternCount();
         AvailableNumInit();
+        RandomMaxPatternCount();
         think();
     
     }
@@ -103,23 +103,7 @@ public class BasicBoss : MonoBehaviour
         patternIndex = Random.Range(0, availableNum.Count);
         Debug.Log($"패턴인덱스 {patternIndex} ");
         
-        //for (int i = 0; i < availableNum.Count; i++)
-        //{
-        //    Debug.Log("제외인덱스 확인");
-        //    if (patternIndex == temp)
-        //    {
-        //        Debug.Log("전기줄XX");
-        //        IsPattern = false;  
-        //        break; 
-        //    }
-        //}
 
-        //if (patternIndex == 0)
-        //    temp = patternIndex;
-
-        //Debug.Log($"이즈패턴{IsPattern}");
-        //if (IsPattern)
-        //{
             Debug.Log("패턴뭐할지생각");
             switch (availableNum[patternIndex])
             {
@@ -288,7 +272,7 @@ public class BasicBoss : MonoBehaviour
 
         for (int i = 1; i < shotCount; i++)
         {
-
+            Debug.Log("돌아가는거" + i);
             GameObject bullet;
             float radian = Mathf.Deg2Rad * i / shotCount * 360;
             bullet = ObjectPool.Instance.GetObject(PoolObjectType.bullet_Type0);//(Bullet, trans);
@@ -317,7 +301,7 @@ public class BasicBoss : MonoBehaviour
 
         }
 
-        if (curPatternCount < maxPatternCount[availableNum[patternIndex]])
+        if (curPatternCount <3)
         {
             Debug.Log("dd");
             yield return new WaitForSeconds(1.5f);
@@ -329,6 +313,7 @@ public class BasicBoss : MonoBehaviour
             think();
             availableNum.RemoveAt(patternIndex);
         }
+
     }
 
 
