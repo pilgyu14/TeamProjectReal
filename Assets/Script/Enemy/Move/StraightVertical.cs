@@ -7,17 +7,20 @@ public class StraightVertical : MonoBehaviour
     [SerializeField]
     private int dir = 1;
 
-
+    public bool IsMove = true;
     void Update()
     {
         CheckLimit();
-        if (transform.position.y < 3.5)
+        if (IsMove)
         {
-            transform.Translate(new Vector2(1f * dir, 0f).normalized * speed * Time.deltaTime);
-        }
-        else
-        {
-            transform.Translate(new Vector2(0f, -1f).normalized * speed * Time.deltaTime);
+            if (transform.position.y < 3.5)
+            {
+                transform.Translate(new Vector2(1f * dir, 0f).normalized * speed * Time.deltaTime);
+            }
+            else
+            {
+                transform.Translate(new Vector2(0f, -1f).normalized * speed * Time.deltaTime);
+            }
         }
     }
     private void CheckLimit()

@@ -34,12 +34,19 @@ public class EnemyShooting : MonoBehaviour
     private float timer = 0;
     private float waitingTime = 0;
 
-    void Start()
+    private StraightDiagonal straightDiagonal; 
+
+    void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
         animator = GetComponent<Animator>();
         col = GetComponent<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        
+    }    
+    void Start()
+    {
+        
         timer = 0;
         waitingTime = 1.5f;
     }
@@ -71,12 +78,25 @@ public class EnemyShooting : MonoBehaviour
                 StartCoroutine("Damaged");
                 return;
             }
-            isDead = true;
+            else
+            {
+                isDead = true;
+                CheckObject();
+            }
             //gameManager.AddScore(score);
             StartCoroutine(Dead());
         }
     }
 
+    void CheckObject()
+    {
+        if(gameObject.GetComponent<StraightDiagonal>())
+            gameObject.GetComponent<StraightDiagonal>().IsMove = false;
+        else if (gameObject.GetComponent<StraightVertical>())
+            gameObject.GetComponent<StraightVertical>().IsMove = false;
+        else if (gameObject.GetComponent<StraightCenter>())
+            gameObject.GetComponent<StraightCenter>().IsMove = false;
+    }
     private IEnumerator Damaged()
     {
         hp--;

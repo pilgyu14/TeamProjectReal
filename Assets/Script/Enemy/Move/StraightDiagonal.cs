@@ -9,6 +9,7 @@ public class StraightDiagonal : MonoBehaviour
 
     private EnemyShooting enemyShooting = null;
 
+    public bool IsMove = true; 
     private void Start()
     {
         enemyShooting = FindObjectOfType<EnemyShooting>();
@@ -19,13 +20,16 @@ public class StraightDiagonal : MonoBehaviour
     {
         
         CheckLimit();
-        if (transform.position.y < 6)
+        if (IsMove)
         {
-            transform.Translate(new Vector2(1f * dir, -1f).normalized * speed * Time.deltaTime);
-        }
-        else
-        {
-            transform.Translate(new Vector2(0f, -1f).normalized * speed * Time.deltaTime);
+            if (transform.position.y < 6)
+            {
+                transform.Translate(new Vector2(1f * dir, -1f).normalized * speed * Time.deltaTime);
+            }
+            else
+            {
+                transform.Translate(new Vector2(0f, -1f).normalized * speed * Time.deltaTime);
+            }
         }
     }
 

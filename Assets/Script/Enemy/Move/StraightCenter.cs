@@ -5,10 +5,14 @@ public class StraightCenter : MonoBehaviour
     [SerializeField]
     float speed = 2f;
 
+    public bool IsMove = true;
     void Update()
     {
         CheckLimit();
-        transform.Translate(Vector2.down * speed * Time.deltaTime);
+        if (IsMove)
+        {
+            transform.Translate(Vector2.down * speed * Time.deltaTime);
+        }
     }
 
     private void CheckLimit()
