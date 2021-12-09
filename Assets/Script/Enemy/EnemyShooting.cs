@@ -58,7 +58,7 @@ public class EnemyShooting : MonoBehaviour
         if (isDead) return;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (isDead) return;
         if (collision.CompareTag("playerBullet"))
@@ -77,7 +77,7 @@ public class EnemyShooting : MonoBehaviour
         }
     }
 
-    private IEnumerator Damaged()
+    protected virtual IEnumerator Damaged()
     {
         hp--;
         spriteRenderer.material.SetColor("_Color", new Color(0f, 0f, 0f, 0f));
@@ -86,7 +86,7 @@ public class EnemyShooting : MonoBehaviour
         isDamaged = false;
     }
 
-    private IEnumerator Dead()
+    protected virtual IEnumerator Dead()
     {
         spriteRenderer.material.SetColor("_Color", new Color(0f, 0f, 0f, 0f));
         col.enabled = false;
@@ -96,7 +96,7 @@ public class EnemyShooting : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public IEnumerator Shooting()
+    public virtual IEnumerator Shooting()
     {
         //if (isDead == false) yield break;
         diff = GameManager.Instance.player.transform.position - transform.position;
