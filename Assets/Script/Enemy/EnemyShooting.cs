@@ -30,6 +30,7 @@ public class EnemyShooting : MonoBehaviour
     public bool isDead = false;
 
     public AudioClip clip;
+    public AudioClip Deadclip;
 
     private float timer = 0;
     private float waitingTime = 0;
@@ -120,6 +121,7 @@ public class EnemyShooting : MonoBehaviour
 
     public IEnumerator Shooting()
     {
+        SoundManager.instance.SFXPlay("Shooting", Deadclip);
         diff = GameManager.Instance.player.transform.position - transform.position;
         diff.Normalize();
         for (i = 0; i < 3; i++)
