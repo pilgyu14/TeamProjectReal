@@ -28,7 +28,7 @@ public class DialogueUi : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
 
-        foreach (string dialogue in dialogueObject.Dialogue)
+        foreach (string dialogue in dialogueObject.Dialogue.dialogue)
         {
             yield return typewritterEffect.Run(dialogue, textLabel);
             yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));

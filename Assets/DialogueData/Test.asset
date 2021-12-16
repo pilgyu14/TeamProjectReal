@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859d5ee8338d01d4cb8270da4e941058, type: 3}
   m_Name: Test
   m_EditorClassIdentifier: 
-  dialogue:
-  - "First \nHello"
-  - 'Second
-
-    Bye'
+  Dialogue:
+    name: 
+    characterSprite: {fileID: 0}
+    dialogue:
+    - "\u3141\u3134\u3147\u3139\u3147\u3139\u3134\u3141\u313B"
+    - 21321321421521
+    - "\u3139\u3147\u314E\u3134\u3147\u3139\u3134\u3147\u313B"
+    - sdfdfvsdfa
+    - 132131
