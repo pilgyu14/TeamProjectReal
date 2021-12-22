@@ -10,14 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a699d4e4b356f9f47969615a5898922f, type: 3}
-  m_Name: Hello
+  m_Name: StartBoss1
   m_EditorClassIdentifier: 
   talkerLeft: {fileID: 11400000, guid: 43af32dca69f3ce42a8448b537fea528, type: 2}
-  talkerRight: {fileID: 11400000, guid: f89f2b969d195e94888c0a86fa37b1a6, type: 2}
+  talkerRight: {fileID: 11400000, guid: 4b6a24943b5a43e4ab5e3bdeca8448a0, type: 2}
   lines:
   - character: {fileID: 11400000, guid: 43af32dca69f3ce42a8448b537fea528, type: 2}
-    text: "\u03BA\u03C5\u03C1\u03B9\u03BF\u03C5..."
-  - character: {fileID: 11400000, guid: f89f2b969d195e94888c0a86fa37b1a6, type: 2}
-    text: "\uC544\uBA5C\uB9AC\uC544 \uC5B8\uB2C8 \uC65C \uADF8\uB798?"
+    text: "Enemy check\r"
+  - character: {fileID: 11400000, guid: 4b6a24943b5a43e4ab5e3bdeca8448a0, type: 2}
+    text: "\uC815\uC2E0\uC774 \uC644\uC804\uD788 \uCE68\uC2DD\uB418\uC5B4 \uBC84\uB9B0\uAC74\uAC00?"
+  - character: {fileID: 11400000, guid: 4b6a24943b5a43e4ab5e3bdeca8448a0, type: 2}
+    text: "\uB0B4\uB9D0 \uB4E4\uB824?!"
   - character: {fileID: 11400000, guid: 43af32dca69f3ce42a8448b537fea528, type: 2}
-    text: "\u03BD\u1FD6\u03BA\u03BF\u03C2... "
+    text: ' Annihilation'
+  - character: {fileID: 11400000, guid: 4b6a24943b5a43e4ab5e3bdeca8448a0, type: 2}
+    text: "\uCE6B.."

@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class DialogDisplay : MonoBehaviour
 {
+    #region 대화 목록
     public Conversation conversation;
+    #endregion
 
     public GameObject talkerLeft;
     public GameObject talkerRight;
