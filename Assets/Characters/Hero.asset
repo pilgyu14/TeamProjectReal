@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Hero
   m_EditorClassIdentifier: 
   name: "\uC8FC\uC778\uACF5"
-  characterImage: {fileID: 21300000, guid: d59df8d921bd69a4686dea4964982d85, type: 3}
+  characterImage: {fileID: 21300000, guid: 6501563d17813dd4887a488f3cd97a61, type: 3}

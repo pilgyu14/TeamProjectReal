@@ -1,8 +1,10 @@
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class TalkUI : MonoBehaviour
 {
+    public CanvasGroup canvasGroup;
     public Image characterImage;
     public Text nameText;
     public Text dialog;
@@ -26,16 +28,21 @@ public class TalkUI : MonoBehaviour
     {
         return talker != null;
     }
-    public bool TalkerIs(Character  character)
+    public bool TalkerIs(Character character)
     {
         return talker == character;
     }
     public void Show()
     {
-        gameObject.SetActive(true);
+        canvasGroup.DOFade(1, .5f);
     }
     public void Hide()
     {
-        gameObject.SetActive(false);
+        canvasGroup.DOFade(0, .5f);
+    }
+    public void TextSmooth()
+    {
+        
+        //dialog.DOText(dialog.text, 2);
     }
 }

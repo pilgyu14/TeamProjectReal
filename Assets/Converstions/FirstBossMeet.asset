@@ -10,18 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a699d4e4b356f9f47969615a5898922f, type: 3}
-  m_Name: Hello
+  m_Name: FirstBossMeet
   m_EditorClassIdentifier: 
   talkerLeft: {fileID: 11400000, guid: 43af32dca69f3ce42a8448b537fea528, type: 2}
   talkerRight: {fileID: 11400000, guid: f89f2b969d195e94888c0a86fa37b1a6, type: 2}
   lines:
-  - character: {fileID: 11400000, guid: 43af32dca69f3ce42a8448b537fea528, type: 2}
-    text: "\uC778\uC815\uD569\uB2C8\uB2E4"
   - character: {fileID: 11400000, guid: f89f2b969d195e94888c0a86fa37b1a6, type: 2}
-    text: "\u3141\u3134\u3147\u313B\u3134\u3147\u313B\u3134\u3147\u313B\u3134\u3147\u3139"
+    text: "\uC801 \uD655\uC778..."
   - character: {fileID: 11400000, guid: 43af32dca69f3ce42a8448b537fea528, type: 2}
-    text: "\u3141\u3134\u3147\u3141\u3134\u3147"
+    text: "\uC815\uC2E0\uC774 \uC644\uC804\uD788 \uCE68\uC2DD\uB418\uC5B4 \uBC84\uB9B0\uAC74\uAC00?"
   - character: {fileID: 11400000, guid: 43af32dca69f3ce42a8448b537fea528, type: 2}
-    text: 12321321
+    text: "\uB0B4\uB9D0 \uB4E4\uB824?!?"
+  - character: {fileID: 11400000, guid: f89f2b969d195e94888c0a86fa37b1a6, type: 2}
+    text: "\uC801..\uC81C\uAC70\uD55C\uB2E4"
   - character: {fileID: 11400000, guid: 43af32dca69f3ce42a8448b537fea528, type: 2}
-    text: "\u3141\u3134\u3147\u3134\u3141\u3147\u3139asdfasdf"
+    text: "\uCE6B..\uC548\uB4E4\uB9AC\uB098.."
+  - character: {fileID: 11400000, guid: 43af32dca69f3ce42a8448b537fea528, type: 2}
+    text: "\uC5B4\uCA54 \uC218 \uC5C6\uAD70.."
