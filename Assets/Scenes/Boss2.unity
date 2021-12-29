@@ -2048,8 +2048,8 @@ MonoBehaviour:
   bulletcnt: 1
   skillBarrier: {fileID: 0}
   wing: {fileID: 0}
-  clip: {fileID: 8300000, guid: ef03493189039544a9d78ed4245730af, type: 3}
-  hitPlayer: {fileID: 8300000, guid: f14fb89810eb7414fb0e8d3e2189e850, type: 3}
+  clip: {fileID: 0}
+  hitPlayer: {fileID: 0}
 --- !u!82 &695430085
 AudioSource:
   m_ObjectHideFlags: 0
