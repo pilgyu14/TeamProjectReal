@@ -1,16 +1,19 @@
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class DialogDisplay : MonoBehaviour
 {
-    #region 대화 목록
-    public Conversation conversation;
-    #endregion
+    public Conversation conversation = null;
 
     public GameObject talkerLeft;
     public GameObject talkerRight;
 
     public TalkUI talkerUILeft;
     public TalkUI talkerUIRight;
+
+    public GameObject endSceneImage;
 
     private int activeLineIndex = 0;
 
@@ -21,6 +24,8 @@ public class DialogDisplay : MonoBehaviour
 
         talkerUILeft.Talker = conversation.talkerLeft;
         talkerUIRight.Talker = conversation.talkerRight;
+
+        AdvanceConversation();
     }
     private void Update()
     {
@@ -41,6 +46,8 @@ public class DialogDisplay : MonoBehaviour
             talkerUILeft.Hide();
             talkerUIRight.Hide();
             activeLineIndex = 0;
+            endSceneImage.transform.DOMove(new Vector3(0, 0), 1)
+                .OnComplete(() =>SceneManager.LoadScene("Boss1"));
         }
     }
     void DisplayLine()
@@ -59,8 +66,11 @@ public class DialogDisplay : MonoBehaviour
     }
     void SetDialog(TalkUI activeTalkerUI, TalkUI inactiveTalkerUI, string text)
     {
+        inactiveTalkerUI.Hide();
         activeTalkerUI.Dialog = text;
         activeTalkerUI.Show();
-        inactiveTalkerUI.Hide();
+        //activeTalkerUI.TextSmooth();
+        // DOText전에 text비우기
+
     }
 }
