@@ -1069,7 +1069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce590249c2b360f468c7dcfdca85d4dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  conversation: {fileID: 11400000, guid: 5858798255098a94fb8cc6c39ace080c, type: 2}
+  conversation: {fileID: 11400000, guid: 572aaebc395bf5d4ea2b8b1f41c4e838, type: 2}
   talkerLeft: {fileID: 516378794}
   talkerRight: {fileID: 913440663}
   talkerUILeft: {fileID: 516378796}
